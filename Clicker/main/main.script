@@ -8,13 +8,30 @@ go.property("serverProduction", 200)
 go.property("quantumCount", 0)
 go.property("quantumProduction", 5000)
 
+go.property("laptopInitialCost", 10)
+go.property("PCInitialCost", 1000)
+go.property("serverInitialCost", 1000000)
+go.property("quantumInitialCost", 100000000)
+
+go.property("costScaler", 0.08)
+
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("@render:", "use_fixed_fit_projection", { near = -1, far = 1 })
 
-
 	self.timer = 0
+
+	self.laptopCurrentCost = self.laptopInitialCost
+	self.PCCurrentCost = self.PCInitialCost
+	self.serverCurrentCost = self.serverInitialCost
+	self.quantumCurrentCost = self.quantumInitialCost
+
+	msg.post("/UI#Marketplace", "UpdateLaptop", {count = self.laptopCount, price = self.laptopCurrentCost})
+	msg.post("/UI#Marketplace", "UpdatePC", {count = self.PCCount, price = self.PCCurrentCost})
+	msg.post("/UI#Marketplace", "UpdateServer", {count = self.serverCount, price = self.serverCurrentCost})
+	msg.post("/UI#Marketplace", "UpdateQuantum", {count = self.quantumCount, price = self.quantumCurrentCost})
+
 	
 end
 
@@ -38,6 +55,19 @@ function update(self, dt)
 
 end
 
+function new_price(self, old_price)
+	local increment = old_price * self.costScaler
+	local increment_floored = math.floor(increment)
+	if increment_floored + 0.5 > increment then
+		increment = increment_floored + 1
+	else
+		increment = increment_floored
+	end
+	local new_price = old_price + increment
+	return new_price
+
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("addCoin") then
 		self.bitcoinCount = self.bitcoinCount + message.coins
@@ -45,19 +75,19 @@ function on_message(self, message_id, message, sender)
 
 	if message_id == hash("addLaptop") then
 		self.laptopCount = self.laptopCount + 1
-		msg.post("/UI#Marketplace", "UpdateLaptopCount", {laptopCount = self.laptopCount})
+		msg.post("/UI#Marketplace", "UpdateLaptop", {count = self.laptopCount, price = self.laptopCurrentCost})
 	end 	
 	if message_id == hash("addPC") then 
 		self.PCCount = self.PCCount + 1
-		msg.post("/UI#Marketplace", "UpdatePCCount", {PCCount = self.PCCount})
+		msg.post("/UI#Marketplace", "UpdatePC", {count = self.PCCount, price = self.PCCurrentCost})
 	end
 	if message_id == hash("addServer") then
 		self.serverCount = self.serverCount + 1
-		msg.post("/UI#Marketplace", "UpdateServerCount", {serverCount = self.serverCount})
+		msg.post("/UI#Marketplace", "UpdateServer", {count = self.serverCount, price = self.serverCurrentCost})
 	end	
 	if message_id == hash("addQuantum") then
 		self.quantumCount = self.quantumCount + 1
-		msg.post("/UI#Marketplace", "UpdateQuantumCount", {quantumCount = self.quantumCount})
+		msg.post("/UI#Marketplace", "UpdateQuantum", {count = self.quantumCount, price = self.quantumCurrentCost})
 	end
 end
 

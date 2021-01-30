@@ -1,20 +1,39 @@
+
+
 function init(self)
 	msg.post(".","acquire_input_focus")
 end
 
+
+function short_number(number)
+	local shorted_number
+	if number / 1000000 < 1 then
+		shorted_number = number
+	elseif number / 1000000000 < 1 then
+		shorted_number = math.floor(number / 1000000) .. "million"
+	elseif number / 1000000000000 < 1 then
+		shorted_number = math.floor(number / 1000000000) .. "billion"
+	end
+	return shorted_number
+end
+
 function on_message(self, message_id, message, sender)
-	if message_id == hash("UpdateLaptopCount") then
-		gui.set_text(gui.get_node("LaptopAmount"), message.laptopCount)
+	if message_id == hash("UpdateLaptop") then
+		gui.set_text(gui.get_node("LaptopAmount"), message.count)
+		gui.set_text(gui.get_node("LaptopPrice"), message.price)
 	end	
-	if message_id == hash("UpdatePCCount") then
-		gui.set_text(gui.get_node("PCAmount"), message.PCCount)
+	if message_id == hash("UpdatePC") then
+		gui.set_text(gui.get_node("PCAmount"), message.count)
+		gui.set_text(gui.get_node("PCPrice"), message.price)
 	end
-	if message_id == hash("UpdateServerCount") then
-		gui.set_text(gui.get_node("ServerAmount"), message.serverCount)
+	if message_id == hash("UpdateServer") then
+		gui.set_text(gui.get_node("ServerAmount"), message.count)
+		gui.set_text(gui.get_node("ServerPrice"), message.price)
 	end
-	if message_id == hash("UpdateQuantumCount") then
+	if message_id == hash("UpdateQuantum") then
 		
-		gui.set_text(gui.get_node("QuantumAmount"), message.quantumCount)
+		gui.set_text(gui.get_node("QuantumAmount"), message.count)
+		gui.set_text(gui.get_node("QuantumPrice"), message.price)
 	end
 end
 

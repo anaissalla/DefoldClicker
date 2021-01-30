@@ -4,15 +4,25 @@ function init(self)
 	-- Remove this function if not needed
 end
 
-
+function short_number(number)
+	local shorted_number
+	if number / 1000000 < 1 then
+		shorted_number = number
+	elseif number / 1000000000 < 1 then
+		shorted_number = math.floor(number / 1000000) .. " million"
+	elseif number / 1000000000000 < 1 then
+		shorted_number = math.floor(number / 1000000000) .. " billion"
+	end
+	return shorted_number
+end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("UpdateBitcoinCount") then
-		gui.set_text(gui.get_node("bitcoinCount"), message.coins)
+		gui.set_text(gui.get_node("bitcoinCount"), short_number(message.coins))
 	end
 
 	if message_id == hash("UpdateBitcoinSpeed") then
-		gui.set_text(gui.get_node("bitcoinSpeed"), message.coins)
+		gui.set_text(gui.get_node("bitcoinSpeed"), "+ ".. short_numbers(message.coins) .. " / s")
 	end
 end
 
