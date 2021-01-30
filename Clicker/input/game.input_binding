@@ -1,4 +1,12 @@
+key_trigger {
+  input: KEY_ESC
+  action: "ESCAPE"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
-  action: "touch"
+  action: "LEFT_CLICK"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_RIGHT
+  action: "RIGHT_CLICK"
 }
