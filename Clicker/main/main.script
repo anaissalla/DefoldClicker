@@ -1,8 +1,12 @@
 go.property("bitcoinCount", 0)
 go.property("laptopCount", 0)
+go.property("laptopProduction", 1)
 go.property("PCCount", 0)
+go.property("PCProduction", 15)
 go.property("serverCount", 0)
+go.property("serverProduction", 200)
 go.property("quantumCount", 0)
+go.property("quantumProduction", 5000)
 
 
 function init(self)
@@ -11,45 +15,49 @@ function init(self)
 
 
 	self.timer = 0
-	--self.laptopCount = 0
-	--self.PCCount = 0
-	--self.serverCount = 0
-	--self.quantumCount
-	--msg.post("UI", "disable")
+	
 end
 
-function update(self, dt)	--update a cada segon
+function update(self, dt)	
 	self.timer = self.timer + dt
+
+
+
+	--fixedUpdate --update a cada segon
 	if self.timer > 1 then
 		self.timer = self.timer - 1
 		
-		
+		local currentProduction = self.laptopCount * self.laptopProduction + self.PCCount * self.PCProduction + self.serverCount * self.serverProduction + self.quantumCount * self.quantumProduction
+		msg.post(".", "addCoin", {coins = currentProduction})
 
-		
+
+
+		msg.post("/UI#Info", "UpdateBitcoinCount", {coins = self.bitcoinCount})
+		msg.post("/UI#Info", "UpdateBitcoinSpeed", {coins = currentProduction})
 	end
 
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("addCoin") then
-		self.bitcoinCount = self.bitcoinCount + message.coinCount
+		self.bitcoinCount = self.bitcoinCount + message.coins
 	end
 
 	if message_id == hash("addLaptop") then
 		self.laptopCount = self.laptopCount + 1
-		msg.post("/Marketplace#Marketplace", "UpdateLaptopCount", {laptopCount = self.laptopCount})
+		msg.post("/UI#Marketplace", "UpdateLaptopCount", {laptopCount = self.laptopCount})
 	end 	
 	if message_id == hash("addPC") then 
 		self.PCCount = self.PCCount + 1
-		msg.post("/Marketplace#Marketplace", "UpdatePCCount", {PCCount = self.PCCount})
+		msg.post("/UI#Marketplace", "UpdatePCCount", {PCCount = self.PCCount})
 	end
 	if message_id == hash("addServer") then
 		self.serverCount = self.serverCount + 1
-		msg.post("/Marketplace#Marketplace", "UpdateServerCount", {serverCount = self.serverCount})
+		msg.post("/UI#Marketplace", "UpdateServerCount", {serverCount = self.serverCount})
 	end	
 	if message_id == hash("addQuantum") then
 		self.quantumCount = self.quantumCount + 1
-		msg.post("/Marketplace#Marketplace", "UpdateQuantumCount", {quantumCount = self.quantumCount})
+		msg.post("/UI#Marketplace", "UpdateQuantumCount", {quantumCount = self.quantumCount})
 	end
 end
 

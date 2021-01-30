@@ -1,4 +1,4 @@
-script: "/main/Marketplace.gui_script"
+script: "/main/Marketplace/Marketplace.gui_script"
 fonts {
   name: "Montserrat"
   font: "/Fonts/Montserrat.font"

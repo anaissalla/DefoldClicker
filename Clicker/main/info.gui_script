@@ -1,0 +1,18 @@
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("UpdateBitcoinCount") then
+		gui.set_text(gui.get_node("bitcoinCount"), message.coins)
+	end
+
+	if message_id == hash("UpdateBitcoinSpeed") then
+		gui.set_text(gui.get_node("bitcoinSpeed"), message.coins)
+	end
+end
+
