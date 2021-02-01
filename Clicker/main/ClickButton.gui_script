@@ -1,14 +1,10 @@
 function init(self)
 
 	msg.post(".", "acquire_input_focus")
-	
-	
 
 	PCSprite = gui.get_node("PC")
-	BitcoinCountText = gui.get_node("BitcoinCounter")
 	
 
-	self.bitcoinCount = 0
 
 end
 
@@ -20,34 +16,17 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("enable")then
 		msg.post(".", "acquire_input_focus")
-		gui.set_text(gui.get_node("text"), "Click me")
-		
 	end
 	
 end
 
 function on_input(self, action_id, action)
 	if action_id == hash("LEFT_CLICK") and action.released then
-		local box = gui.get_node("box")
 		local PCSprite = gui.get_node("PC")
 
-		--Boto de prova
-		if (gui.pick_node(box, action.x, action.y))then
-			local text = gui.get_node("text")
-			gui.set_text(text, "Clicked")
+		if gui.pick_node(PCSprite, action.x, action.y)then
 
-			msg.post(".", "disable")
-			msg.post(".", "release_input_focus")
-
-
-			--main buttton
-		elseif gui.pick_node(PCSprite, action.x, action.y)then
-
-			--add bitcoin count
-			self.bitcoinCount = self.bitcoinCount + 1
-
-			--display bitcoin count
-			gui.set_text(BitcoinCountText, self.bitcoinCount)
+			msg.post("/Main#main", "addCoin", {coins = 1})
 
 			--visual feeedback
 			gui.set_size(PCSprite, vmath.vector3(180, 180, 0))

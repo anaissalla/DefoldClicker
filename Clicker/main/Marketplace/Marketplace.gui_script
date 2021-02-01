@@ -2,39 +2,96 @@
 
 function init(self)
 	msg.post(".","acquire_input_focus")
-end
+	
+ 	self.LaptopPrice = gui.get_node("LaptopPrice")
+ 	self.LaptopPie = gui.get_node("LaptopPie")
+ 	self.LaptopCount = gui.get_node("LaptopAmount")
 
+ 	self.PCPrice = gui.get_node("PCPrice")
+ 	self.PCPie = gui.get_node("PCPie")
+ 	self.PCCount = gui.get_node("PCAmount")
+
+ 	self.ServerPrice = gui.get_node("ServerPrice")
+ 	self.ServerPie = gui.get_node("ServerPie")
+ 	self.ServerCount = gui.get_node("ServerAmount")
+
+ 	self.QuantumPrice = gui.get_node("QuantumPrice")
+ 	self.QuantumPie = gui.get_node("QuantumPie")
+ 	self.QuantumCount = gui.get_node("QuantumAmount")
+
+
+end
 
 function short_number(number)
 	local shorted_number
-	if number / 1000000 < 1 then
+	if number < 10^6  then
 		shorted_number = number
-	elseif number / 1000000000 < 1 then
-		shorted_number = math.floor(number / 1000000) .. "million"
-	elseif number / 1000000000000 < 1 then
-		shorted_number = math.floor(number / 1000000000) .. "billion"
+	elseif number < 10^9 then
+		number = number / 10^6
+		shorted_number = string.format("%3.3f", number) .. " million"
+	elseif number < 10^12 then
+		number = number / 10^9
+		shorted_number = string.format("%3.3f", number) .. " billion"
 	end
 	return shorted_number
 end
 
 function on_message(self, message_id, message, sender)
+	--update amount and price
 	if message_id == hash("UpdateLaptop") then
-		gui.set_text(gui.get_node("LaptopAmount"), message.count)
-		gui.set_text(gui.get_node("LaptopPrice"), message.price)
+		gui.set_text(self.LaptopCount, message.count)
+		gui.set_text(self.LaptopPrice, message.price)
 	end	
 	if message_id == hash("UpdatePC") then
-		gui.set_text(gui.get_node("PCAmount"), message.count)
-		gui.set_text(gui.get_node("PCPrice"), message.price)
+		gui.set_text(self.PCCount, message.count)
+		gui.set_text(self.PCPrice, message.price)
 	end
 	if message_id == hash("UpdateServer") then
-		gui.set_text(gui.get_node("ServerAmount"), message.count)
-		gui.set_text(gui.get_node("ServerPrice"), message.price)
+		gui.set_text(self.ServerCount, message.count)
+		gui.set_text(self.ServerPrice, message.price)
 	end
 	if message_id == hash("UpdateQuantum") then
 		
-		gui.set_text(gui.get_node("QuantumAmount"), message.count)
-		gui.set_text(gui.get_node("QuantumPrice"), message.price)
+		gui.set_text(self.QuantumCount, message.count)
+		gui.set_text(self.QuantumPrice, message.price)
 	end
+
+	--update CanBuy
+	if message_id == hash("UpdateCanBuy") then
+
+		print(message.laptop)
+		
+		if message.laptop >= 1 then
+			gui.set_color(self.LaptopPrice, vmath.vector4(0,0.9,0,1))--green
+			gui.set_fill_angle(self.LaptopPie, 0)
+			print("CanBuyLaptop")
+		else
+			gui.set_color(self.LaptopPrice, vmath.vector4(0.9,0,0,1))--red
+			gui.set_fill_angle(self.LaptopPie, 360 - message.laptop * 360)
+		end
+		if message.PC >= 1 then
+			gui.set_color(self.PCPrice, vmath.vector4(0,0.9,0,1))--green
+			gui.set_fill_angle(self.PCPie, 0)
+		else
+			gui.set_color(self.PCPrice, vmath.vector4(0.9,0,0,1))--red
+			gui.set_fill_angle(self.PCPie, 360 - message.PC * 360)
+		end
+		if message.server >= 1 then
+			gui.set_color(self.ServerPrice, vmath.vector4(0,0.9,0,1))--green
+			gui.set_fill_angle(self.ServerPie, 0)
+		else
+			gui.set_color(self.ServerPrice, vmath.vector4(0.9,0,0,1))--red
+			gui.set_fill_angle(self.ServerPie, 360 - message.server * 360)
+		end
+		if message.quantum >= 1 then
+			gui.set_color(self.QuantumPrice, vmath.vector4(0,0.9,0,1))--green
+			gui.set_fill_angle(self.QuantumPie, 0)
+		else
+			gui.set_color(self.QuantumPrice, vmath.vector4(0.9,0,0,1))--red
+			gui.set_fill_angle(self.QuantumPie, 360 - message.quantum * 360)
+		end
+	end
+
 end
 
 function on_input(self, action_id, action)

@@ -1,4 +1,4 @@
-go.property("bitcoinCount", 0)
+bitcoinCount = 0
 go.property("laptopCount", 0)
 go.property("laptopProduction", 1)
 go.property("PCCount", 0)
@@ -13,88 +13,156 @@ go.property("PCInitialCost", 1000)
 go.property("serverInitialCost", 1000000)
 go.property("quantumInitialCost", 100000000)
 
-go.property("costScaler", 0.08)
+go.property("costScaler", 0.1)
 
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("@render:", "use_fixed_fit_projection", { near = -1, far = 1 })
 
-	self.timer = 0
 
+
+	self.timer = 0
+	self.currentProduction = 0
 	self.laptopCurrentCost = self.laptopInitialCost
 	self.PCCurrentCost = self.PCInitialCost
 	self.serverCurrentCost = self.serverInitialCost
 	self.quantumCurrentCost = self.quantumInitialCost
 
+--SetUp Marketplace
 	msg.post("/UI#Marketplace", "UpdateLaptop", {count = self.laptopCount, price = self.laptopCurrentCost})
 	msg.post("/UI#Marketplace", "UpdatePC", {count = self.PCCount, price = self.PCCurrentCost})
 	msg.post("/UI#Marketplace", "UpdateServer", {count = self.serverCount, price = self.serverCurrentCost})
 	msg.post("/UI#Marketplace", "UpdateQuantum", {count = self.quantumCount, price = self.quantumCurrentCost})
+
+--SetUp Info
+	msg.post(".", "UpdateBitcoinSpeed")
+	msg.post(".", "addCoin", {coins = 0})
 
 	
 end
 
 function update(self, dt)	
 	self.timer = self.timer + dt
-
-
-
 	--fixedUpdate --update a cada segon
 	if self.timer > 1 then
 		self.timer = self.timer - 1
 		
-		local currentProduction = self.laptopCount * self.laptopProduction + self.PCCount * self.PCProduction + self.serverCount * self.serverProduction + self.quantumCount * self.quantumProduction
-		msg.post(".", "addCoin", {coins = currentProduction})
 
 
-
-		msg.post("/UI#Info", "UpdateBitcoinCount", {coins = self.bitcoinCount})
-		msg.post("/UI#Info", "UpdateBitcoinSpeed", {coins = currentProduction})
 	end
+--normal update
+
+	--Update coins
+	bitcoinCount = bitcoinCount + self.currentProduction * dt
+	msg.post("/UI#Info", "UpdateBitcoinCount", {coins = math.floor(bitcoinCount)})
+
+	--Update Marketplace price color
+	local laptopsICanBuy = bitcoinCount / self.laptopCurrentCost
+	--print(laptopsICanBuy)
+	local PCsICanBuy = bitcoinCount / self.PCCurrentCost
+	local serversICanBuy = bitcoinCount / self.serverCurrentCost
+	local quantumICanBuy = bitcoinCount / self.quantumCurrentCost
+
+	msg.post("/UI#Marketplace", "UpdateCanBuy", {laptop = laptopsICanBuy, PC = PCsICanBuy, server = serversICanBuy, quantum = quantumICanBuy})
+
 
 end
 
-function new_price(self, old_price)
-	local increment = old_price * self.costScaler
-	local increment_floored = math.floor(increment)
-	if increment_floored + 0.5 > increment then
-		increment = increment_floored + 1
+function new_price(self, tipo, ammount)
+	local new_price = 0
+	new_price = ((ammount + 20) ^ 2) / 40
+	if tipo == "laptop" then
+		new_price = new_price 
+	elseif tipo == "PC" then
+ 		new_price = new_price * (self.PCInitialCost/self.laptopInitialCost)
+	elseif tipo == "server" then
+		new_price = new_price * (self.serverInitialCost/self.laptopInitialCost)
+	elseif tipo == "quantum" then
+		new_price = new_price * (self.quantumInitialCost/self.laptopInitialCost)
 	else
-		increment = increment_floored
+		print("ERROR! : Trying to solve new price but no type was specified.")
+		return new_price 
 	end
-	local new_price = old_price + increment
-	return new_price
+
+	return math.floor(new_price)
 
 end
 
 function on_message(self, message_id, message, sender)
+	--add coins
 	if message_id == hash("addCoin") then
-		self.bitcoinCount = self.bitcoinCount + message.coins
+		bitcoinCount = bitcoinCount + message.coins
+		msg.post("/UI#Info", "UpdateBitcoinCount", {coins = math.floor(bitcoinCount)})
 	end
 
-	if message_id == hash("addLaptop") then
-		self.laptopCount = self.laptopCount + 1
-		msg.post("/UI#Marketplace", "UpdateLaptop", {count = self.laptopCount, price = self.laptopCurrentCost})
-	end 	
-	if message_id == hash("addPC") then 
-		self.PCCount = self.PCCount + 1
-		msg.post("/UI#Marketplace", "UpdatePC", {count = self.PCCount, price = self.PCCurrentCost})
+	if message_id == hash("UpdateBitcoinSpeed") then
+		self.currentProduction = self.laptopCount * self.laptopProduction + self.PCCount * self.PCProduction + self.serverCount * self.serverProduction + self.quantumCount * self.quantumProduction
+		msg.post("/UI#Info", "UpdateBitcoinSpeed", {coins = self.currentProduction})
 	end
+
+	
+
+	if message_id == hash("addLaptop") then
+
+		if(bitcoinCount >= self.laptopCurrentCost) then
+			--add laptop
+			self.laptopCount = self.laptopCount + 1
+
+			--remove coins
+			msg.post(".", "addCoin", {coins = -self.laptopCurrentCost})
+
+			--Solve new price
+			self.laptopCurrentCost = new_price(self, "laptop", self.laptopCount)
+
+			--Update Marketplace info
+			msg.post("/UI#Marketplace", "UpdateLaptop", {count = self.laptopCount, price = self.laptopCurrentCost})
+
+			--Update Game Info
+			msg.post(".", "UpdateBitcoinSpeed")
+			
+		end
+	end 	
+
+
+	if message_id == hash("addPC") then 
+		if bitcoinCount >= self.PCCurrentCost then
+			self.PCCount = self.PCCount + 1
+			msg.post(".", "addCoin", {coins = -self.PCCurrentCost})
+			self.PCCurrentCost = new_price(self, "PC", self.PCCount)
+			msg.post("/UI#Marketplace", "UpdatePC", {count = self.PCCount, price = self.PCCurrentCost})
+			msg.post(".", "UpdateBitcoinSpeed")
+		end
+	end
+
 	if message_id == hash("addServer") then
-		self.serverCount = self.serverCount + 1
-		msg.post("/UI#Marketplace", "UpdateServer", {count = self.serverCount, price = self.serverCurrentCost})
+		if bitcoinCount >= self.serverCurrentCost then
+			self.serverCount = self.serverCount + 1
+			msg.post(".", "addCoin", {coins = -self.serverCurrentCost})
+			self.serverCurrentCost = new_price(self, "server", self.serverCount)
+			msg.post("/UI#Marketplace", "UpdateServer", {count = self.serverCount, price = self.serverCurrentCost})
+			msg.post(".", "UpdateBitcoinSpeed")
+		end
+
+
+		
 	end	
+
 	if message_id == hash("addQuantum") then
-		self.quantumCount = self.quantumCount + 1
-		msg.post("/UI#Marketplace", "UpdateQuantum", {count = self.quantumCount, price = self.quantumCurrentCost})
+		if bitcoinCount >= self.quantumCurrentCost then
+			self.quantumCount = self.quantumCount + 1
+			msg.post(".", "addCoin", {coins = -self.quantumCurrentCost})
+			self.quantumCurrentCost = new_price(self, "quantum", self.quantumCount)
+			msg.post("/UI#Marketplace", "UpdateServer", {count = self.quantumCount, price = self.quantumCurrentCost})
+			msg.post(".", "UpdateBitcoinSpeed")
+		end
 	end
 end
 
 
 function on_input(self, action_id, action)
 	if action_id == hash("LEFT_CLICK") and action.pressed then
-		print("Touch!")
+		
 		
 	end
 

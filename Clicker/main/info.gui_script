@@ -2,16 +2,20 @@ function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+
+	
 end
 
 function short_number(number)
 	local shorted_number
-	if number / 1000000 < 1 then
+	if number < 10^6  then
 		shorted_number = number
-	elseif number / 1000000000 < 1 then
-		shorted_number = math.floor(number / 1000000) .. " million"
-	elseif number / 1000000000000 < 1 then
-		shorted_number = math.floor(number / 1000000000) .. " billion"
+	elseif number < 10^9 then
+		number = number / 10^6
+		shorted_number = string.format("%3.3f", number) .. " million"
+	elseif number < 10^12 then
+		number = number / 10^9
+		shorted_number = string.format("%3.3f", number) .. " billion"
 	end
 	return shorted_number
 end
@@ -22,7 +26,8 @@ function on_message(self, message_id, message, sender)
 	end
 
 	if message_id == hash("UpdateBitcoinSpeed") then
-		gui.set_text(gui.get_node("bitcoinSpeed"), "+ ".. short_numbers(message.coins) .. " / s")
+		print(message.coins)
+		gui.set_text(gui.get_node("bitcoinSpeed"), "+ " .. short_number(message.coins) .. " / s")
 	end
 end
 

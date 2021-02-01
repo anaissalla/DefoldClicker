@@ -377,12 +377,12 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 90.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: 1.0
+    y: -1.0
     z: 1.0
     w: 1.0
   }
@@ -393,9 +393,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.2
+    y: 0.2
+    z: 0.2
     w: 1.0
   }
   type: TYPE_PIE
@@ -412,11 +412,11 @@ nodes {
   outerBounds: PIEBOUNDS_ELLIPSE
   innerRadius: 25.0
   perimeterVertices: 50
-  pieFillAngle: 360.0
+  pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.87
+  alpha: 0.72
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -730,12 +730,12 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 90.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: 1.0
+    y: -1.0
     z: 1.0
     w: 1.0
   }
@@ -746,15 +746,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.2
+    y: 0.2
+    z: 0.2
     w: 1.0
   }
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "PCpie"
+  id: "PCPie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -765,11 +765,11 @@ nodes {
   outerBounds: PIEBOUNDS_ELLIPSE
   innerRadius: 25.0
   perimeterVertices: 50
-  pieFillAngle: 360.0
+  pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.87
+  alpha: 0.72
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -1083,12 +1083,12 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 90.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: 1.0
+    y: -1.0
     z: 1.0
     w: 1.0
   }
@@ -1099,9 +1099,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.2
+    y: 0.2
+    z: 0.2
     w: 1.0
   }
   type: TYPE_PIE
@@ -1118,11 +1118,11 @@ nodes {
   outerBounds: PIEBOUNDS_ELLIPSE
   innerRadius: 25.0
   perimeterVertices: 50
-  pieFillAngle: 360.0
+  pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.87
+  alpha: 0.72
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -1437,12 +1437,12 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 90.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: 1.0
+    y: -1.0
     z: 1.0
     w: 1.0
   }
@@ -1453,9 +1453,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.2
+    y: 0.2
+    z: 0.2
     w: 1.0
   }
   type: TYPE_PIE
@@ -1472,11 +1472,11 @@ nodes {
   outerBounds: PIEBOUNDS_ELLIPSE
   innerRadius: 25.0
   perimeterVertices: 50
-  pieFillAngle: 360.0
+  pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.87
+  alpha: 0.72
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }

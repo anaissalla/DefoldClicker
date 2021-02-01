@@ -3,6 +3,10 @@ fonts {
   name: "Montserrat"
   font: "/Fonts/Montserrat.font"
 }
+fonts {
+  name: "NK57 Info"
+  font: "/Fonts/NK57 Info.font"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -43,7 +47,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "BitcoinCount"
-  font: "Montserrat"
+  font: "NK57 Info"
   id: "bitcoinCount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -105,7 +109,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Bitcoin/s"
-  font: "Montserrat"
+  font: "NK57 Info"
   id: "bitcoinSpeed"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
