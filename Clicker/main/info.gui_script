@@ -6,10 +6,12 @@ function init(self)
 	
 end
 
-function short_number(number)
+function short_number(number) -- ha d'haber un per coins i un altre per speed
 	local shorted_number
-	if number < 10^6  then
-		shorted_number = number
+	if number < 10^3  then
+		shorted_number = string.format("%.1f", number)
+	elseif number < 10^6 then 
+		shorted_number = string.format("%.f", number)
 	elseif number < 10^9 then
 		number = number / 10^6
 		shorted_number = string.format("%3.3f", number) .. " million"
