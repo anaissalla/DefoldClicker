@@ -56,15 +56,17 @@ function on_message(self, message_id, message, sender)
 		gui.set_text(self.QuantumPrice, message.price)
 	end
 
+	
+
 	--update CanBuy
 	if message_id == hash("UpdateCanBuy") then
 
-		print(message.laptop)
+		--print(message.laptop)
 		
 		if message.laptop >= 1 then
 			gui.set_color(self.LaptopPrice, vmath.vector4(0,0.9,0,1))--green
 			gui.set_fill_angle(self.LaptopPie, 0)
-			print("CanBuyLaptop")
+			--print("CanBuyLaptop")
 		else
 			gui.set_color(self.LaptopPrice, vmath.vector4(0.9,0,0,1))--red
 			gui.set_fill_angle(self.LaptopPie, 360 - message.laptop * 360)

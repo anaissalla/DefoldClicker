@@ -12,7 +12,7 @@ images {
 }
 images {
   image: "/assets/images/background.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  sprite_trim_mode: SPRITE_TRIM_MODE_4
 }
 images {
   image: "/assets/images/logo.png"

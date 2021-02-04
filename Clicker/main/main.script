@@ -48,7 +48,7 @@ function update(self, dt)
 	if self.timer > 1 then
 		self.timer = self.timer - 1
 		
-
+			
 
 	end
 --normal update
@@ -59,7 +59,7 @@ function update(self, dt)
 
 	--Update Marketplace price color
 	local laptopsICanBuy = bitcoinCount / self.laptopCurrentCost
-	--print(laptopsICanBuy)
+	
 	local PCsICanBuy = bitcoinCount / self.PCCurrentCost
 	local serversICanBuy = bitcoinCount / self.serverCurrentCost
 	local quantumICanBuy = bitcoinCount / self.quantumCurrentCost

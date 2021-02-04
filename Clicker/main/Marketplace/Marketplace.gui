@@ -3,6 +3,10 @@ fonts {
   name: "Montserrat"
   font: "/Fonts/Montserrat.font"
 }
+fonts {
+  name: "bpdots"
+  font: "/Fonts/bpdots.font"
+}
 textures {
   name: "main"
   texture: "/main/main.atlas"
@@ -101,7 +105,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Marketplace"
-  font: "Montserrat"
+  font: "bpdots"
   id: "Title"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
