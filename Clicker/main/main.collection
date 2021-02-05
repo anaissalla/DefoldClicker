@@ -104,7 +104,7 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"ClickButton\"\n"
-  "  component: \"/main/ClickButton.gui\"\n"
+  "  component: \"/main/ClickButton/ClickButton.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

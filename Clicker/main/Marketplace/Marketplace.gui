@@ -19,8 +19,8 @@ background_color {
 }
 nodes {
   position {
-    x: 1065.0
-    y: 316.0
+    x: 1674.0
+    y: 471.0
     z: 0.0
     w: 1.0
   }
@@ -1581,7 +1581,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "Upgrade"
+  id: "upgradeButton"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1637,7 +1637,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Upgrade"
   font: "bpdots"
-  id: "UpgradeText"
+  id: "upgradeText"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1655,7 +1655,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "Upgrade"
+  parent: "upgradeButton"
   layer: ""
   inherit_alpha: true
   alpha: 1.0

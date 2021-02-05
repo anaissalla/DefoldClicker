@@ -1,4 +1,4 @@
-script: "/main/ClickButton.gui_script"
+script: "/main/ClickButton/ClickButton.gui_script"
 fonts {
   name: "system_font"
   font: "/builtins/fonts/system_font.font"
@@ -11,6 +11,10 @@ textures {
   name: "main"
   texture: "/main/main.atlas"
 }
+textures {
+  name: "ClickSprite"
+  texture: "/main/ClickButton/ClickSprite.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -19,8 +23,8 @@ background_color {
 }
 nodes {
   position {
-    x: 200.0
-    y: 360.0
+    x: 502.0
+    y: 481.0
     z: 0.0
     w: 1.0
   }
@@ -37,8 +41,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 200.0
+    x: 640.0
+    y: 640.0
     z: 0.0
     w: 1.0
   }
@@ -50,8 +54,8 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "main/Computer"
-  id: "PC"
+  texture: "ClickSprite/Computer1"
+  id: "clickButton"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
