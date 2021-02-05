@@ -168,7 +168,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "LaptopButton"
+  id: "item1Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -224,7 +224,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Laptop"
   font: "Montserrat"
-  id: "LaptopName"
+  id: "item1Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -242,7 +242,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "LaptopButton"
+  parent: "item1Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -288,7 +288,7 @@ nodes {
   text: "0\n"
   ""
   font: "Montserrat"
-  id: "LaptopAmount"
+  id: "item1Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -306,7 +306,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "LaptopButton"
+  parent: "item1Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -350,12 +350,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "main/logo"
-  id: "LaptopImage"
+  id: "item1Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "LaptopButton"
+  parent: "item1Button"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -405,12 +405,12 @@ nodes {
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "LaptopPie"
+  id: "item1Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "LaptopImage"
+  parent: "item1Image"
   layer: ""
   inherit_alpha: true
   outerBounds: PIEBOUNDS_ELLIPSE
@@ -459,7 +459,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
   font: "Montserrat"
-  id: "LaptopPrice"
+  id: "item1Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -477,7 +477,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "LaptopButton"
+  parent: "item1Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -521,7 +521,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "PCButton"
+  id: "item2Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -577,7 +577,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Computer"
   font: "Montserrat"
-  id: "PCName"
+  id: "item2Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -595,7 +595,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "PCButton"
+  parent: "item2Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -641,7 +641,7 @@ nodes {
   text: "0\n"
   ""
   font: "Montserrat"
-  id: "PCAmount"
+  id: "item2Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -659,7 +659,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "PCButton"
+  parent: "item2Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -703,12 +703,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "main/logo"
-  id: "PCImage"
+  id: "item2Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "PCButton"
+  parent: "item2Button"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -758,12 +758,12 @@ nodes {
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "PCPie"
+  id: "item2Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "PCImage"
+  parent: "item2Image"
   layer: ""
   inherit_alpha: true
   outerBounds: PIEBOUNDS_ELLIPSE
@@ -812,7 +812,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
   font: "Montserrat"
-  id: "PCPrice"
+  id: "item2Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -830,7 +830,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "PCButton"
+  parent: "item2Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -874,7 +874,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "ServerButton"
+  id: "item3Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -930,7 +930,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "GPU Server"
   font: "Montserrat"
-  id: "ServerName"
+  id: "item3Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -948,7 +948,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ServerButton"
+  parent: "item3Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -994,7 +994,7 @@ nodes {
   text: "0\n"
   ""
   font: "Montserrat"
-  id: "ServerAmount"
+  id: "item3Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1012,7 +1012,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ServerButton"
+  parent: "item3Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -1056,12 +1056,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "main/logo"
-  id: "ServerImage"
+  id: "item3Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "ServerButton"
+  parent: "item3Button"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -1111,12 +1111,12 @@ nodes {
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "ServerPie"
+  id: "item3Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "ServerImage"
+  parent: "item3Image"
   layer: ""
   inherit_alpha: true
   outerBounds: PIEBOUNDS_ELLIPSE
@@ -1165,7 +1165,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
   font: "Montserrat"
-  id: "ServerPrice"
+  id: "item3Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1183,7 +1183,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ServerButton"
+  parent: "item3Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -1227,7 +1227,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "QuantumButton"
+  id: "item4Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1284,7 +1284,7 @@ nodes {
   text: "Quantum \n"
   "Computer"
   font: "Montserrat"
-  id: "QauntumName"
+  id: "item4Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1302,7 +1302,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "QuantumButton"
+  parent: "item4Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -1348,7 +1348,7 @@ nodes {
   text: "0\n"
   ""
   font: "Montserrat"
-  id: "QuantumAmount"
+  id: "item4Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1366,7 +1366,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "QuantumButton"
+  parent: "item4Button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -1410,12 +1410,12 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "main/logo"
-  id: "QuantumImage"
+  id: "item4Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "QuantumButton"
+  parent: "item4Button"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -1465,12 +1465,12 @@ nodes {
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "QuantumPie"
+  id: "item4Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "QuantumImage"
+  parent: "item4Image"
   layer: ""
   inherit_alpha: true
   outerBounds: PIEBOUNDS_ELLIPSE
@@ -1519,7 +1519,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
   font: "Montserrat"
-  id: "QuantumPrice"
+  id: "item4Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1537,7 +1537,125 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "QuantumButton"
+  parent: "item4Button"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 1.0
+    y: 349.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.987
+    y: 0.66
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.4
+    y: 0.4
+    z: 0.4
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "Upgrade"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  parent: "Shop"
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.366
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 100.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Upgrade"
+  font: "bpdots"
+  id: "UpgradeText"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "Upgrade"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
