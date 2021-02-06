@@ -33,6 +33,8 @@ function init(self)
 	self.item4CurrentCost = self.item4InitialCost
 	self.clickUpgradeCurrentCost = self.clickUpgradeInitialCost
 
+	self.PClevel = 0
+
 --SetUp Marketplace
 	msg.post("/UI#Marketplace", "Updateitem1", {count = self.item1Count, price = self.item1CurrentCost})
 	msg.post("/UI#Marketplace", "Updateitem2", {count = self.item2Count, price = self.item2CurrentCost})

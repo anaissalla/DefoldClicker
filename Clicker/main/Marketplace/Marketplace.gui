@@ -1635,7 +1635,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Upgrade"
+  text: "Upgrade PC"
   font: "bpdots"
   id: "upgradeText"
   xanchor: XANCHOR_NONE
