@@ -1,25 +1,5 @@
-images {
-  image: "/assets/images/Computers/Computer1.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/Computers/Computer2.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/Computers/Computer3.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/Computers/Computer4.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/Computers/Computer5.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
 animations {
-  id: "Computer2Ani"
+  id: "Computer2"
   images {
     image: "/assets/images/Computers/Computer2Ani/Computer2Scripting01.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF

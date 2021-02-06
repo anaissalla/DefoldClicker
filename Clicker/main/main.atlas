@@ -23,7 +23,11 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/testBG1.png"
+  image: "/assets/images/Background/Background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/Background/table.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
