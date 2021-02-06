@@ -15,7 +15,7 @@ end
 
 local function GetNewCoinsPerClick()
 	return self.coinsPerClick * self.coinsPerClickScaler
-
+end
 
 function on_message(self, message_id, message, sender)
 	--old
