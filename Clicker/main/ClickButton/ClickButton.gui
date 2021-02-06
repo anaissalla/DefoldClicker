@@ -24,7 +24,7 @@ background_color {
 nodes {
   position {
     x: 502.0
-    y: 481.0
+    y: 360.0
     z: 0.0
     w: 1.0
   }
@@ -58,7 +58,7 @@ nodes {
   id: "clickButton"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_S
   adjust_mode: ADJUST_MODE_FIT
   layer: ""
   inherit_alpha: true
