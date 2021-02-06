@@ -119,7 +119,7 @@ function on_input(self, action_id, action)
 		end
 			
 		if gui.pick_node(upgradeButton, action.x, action.y) then
-			msg.post("/UI#ClickButton", "upgradeClickSprite")
+			msg.post("/Main#main", "upgradeClick")
 		end
 	end	
 end

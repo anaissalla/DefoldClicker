@@ -74,8 +74,8 @@ function update(self, dt)
 end
 
 local function new_price(current_price, scaler)
-	
-	return string.format("%.0f", current_price * scaler)
+	local price_increment = string.format("%.0f", current_price * scaler)
+	return current_price + price_increment
 
 end
 
@@ -103,7 +103,7 @@ function on_message(self, message_id, message, sender)
 			msg.post(".", "addCoin", {coins = -self.item1CurrentCost})
 
 			--Solve new price
-			self.item1CurrentCost = new_price(self, "item1", self.item1Count)
+			self.item1CurrentCost = new_price(self.item1CurrentCost, self.costScaler)
 
 			--Update Marketplace info
 			msg.post("/UI#Marketplace", "Updateitem1", {count = self.item1Count, price = self.item1CurrentCost})
@@ -119,7 +119,7 @@ function on_message(self, message_id, message, sender)
 		if bitcoinCount >= self.item2CurrentCost then
 			self.item2Count = self.item2Count + 1
 			msg.post(".", "addCoin", {coins = -self.item2CurrentCost})
-			self.item2CurrentCost = new_price(self, "item2", self.item2Count)
+			self.item2CurrentCost = new_price(self.item2CurrentCost, self.costScaler)
 			msg.post("/UI#Marketplace", "Updateitem2", {count = self.item2Count, price = self.item2CurrentCost})
 			msg.post(".", "UpdateBitcoinSpeed")
 		end
@@ -129,7 +129,7 @@ function on_message(self, message_id, message, sender)
 		if bitcoinCount >= self.item3CurrentCost then
 			self.item3Count = self.item3Count + 1
 			msg.post(".", "addCoin", {coins = -self.item3CurrentCost})
-			self.item3CurrentCost = new_price(self, "item3", self.item3Count)
+			self.item3CurrentCost = new_price(self.item3CurrentCost, self.costScaler)
 			msg.post("/UI#Marketplace", "Updateitem3", {count = self.item3Count, price = self.item3CurrentCost})
 			msg.post(".", "UpdateBitcoinSpeed")
 		end
@@ -142,17 +142,20 @@ function on_message(self, message_id, message, sender)
 		if bitcoinCount >= self.item4CurrentCost then
 			self.item4Count = self.item4Count + 1
 			msg.post(".", "addCoin", {coins = -self.item4CurrentCost})
-			--self.item4CurrentCost = new_price(self, self.item4Count, )
+			self.item4CurrentCost = new_price(self.item4CurrentCost, self.costScaler)
 			msg.post("/UI#Marketplace", "Updateitem4", {count = self.item4Count, price = self.item4CurrentCost})
 			msg.post(".", "UpdateBitcoinSpeed")
 		end
 	end
 
 	if message_id == hash("upgradeClick") then
-		if bitcoinCount >= self.currentClickUpgradePrice then
+		if bitcoinCount >= self.clickUpgradeCurrentCost then
 			self.PClevel = self.PClevel + 1
-			self.currentClickUpgradePrice = new_price(self.currentClickUpgradePrice, self.clickUpgradeCostScaler)
-			msg.post(".", "addCoins", {coins = -self.currentClickUpgradePrice})
+			
+			msg.post(".", "addCoins", {coins = -self.clickUpgradeCurrentCost})
+
+			self.clickUpgradeCurrentCost = new_price(self.clickUpgradeCurrentCost, self.clickUpgradeCostScaler)
+			msg.post("/UI#ClickButton", "upgradeClickSprite")
 		end
 	end
 end
