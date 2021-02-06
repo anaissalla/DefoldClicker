@@ -9,12 +9,12 @@ function init(self)
 	self.clickButtonSprite = gui.get_node("clickButton")
 	self.currentAnimation = 0
 
-
+	self.coinsPerClickScaler = 4
 end
 
 
 
-local function GetNewCoinsPerClick()
+local function GetNewCoinsPerClick(self)
 	return self.coinsPerClick * self.coinsPerClickScaler
 end
 
@@ -26,9 +26,6 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("upgradeClickSprite") then
 		print("upgradeClickSprite")
 		local sprite = gui.get_node("clickButton")
-
-		self.coinsPerClick = GetNewCoinsPerClick()
-		self.update = self.update +1
 
 		if (self.update == 0) then
 			gui.play_flipbook(sprite, "Computer2")
@@ -43,6 +40,8 @@ function on_message(self, message_id, message, sender)
 			gui.play_flipbook(sprite, "Computer5")
 			
 		end
+		self.coinsPerClick = GetNewCoinsPerClick(self)
+		self.update = self.update +1
 	end
 end
 
