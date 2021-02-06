@@ -61,12 +61,9 @@ function on_message(self, message_id, message, sender)
 	--update Availability
 	if message_id == hash("UpdateAvailability") then
 
-		--print(message.item1)
-		
 		if message.item1 >= 1 then
 			gui.set_color(self.item1Price, vmath.vector4(0,0.9,0,1))--green
 			gui.set_fill_angle(self.item1Pie, 0)
-			--print("Availabilityitem1")
 		else
 			gui.set_color(self.item1Price, vmath.vector4(0.9,0,0,1))--red
 			gui.set_fill_angle(self.item1Pie, 360 - message.item1 * 360)
