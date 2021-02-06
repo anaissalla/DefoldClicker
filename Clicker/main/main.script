@@ -13,7 +13,10 @@ go.property("item2InitialCost", 1000)
 go.property("item3InitialCost", 1000000)
 go.property("item4InitialCost", 100000000)
 
-go.property("costScaler", 0.1)
+go.property("costScaler", 0.18)
+
+go.property("clickUpgradeInitialCost", 1000)
+go.property("clickUpgradeCostScaler", 15)
 
 
 function init(self)
@@ -28,6 +31,7 @@ function init(self)
 	self.item2CurrentCost = self.item2InitialCost
 	self.item3CurrentCost = self.item3InitialCost
 	self.item4CurrentCost = self.item4InitialCost
+	self.clickUpgradeCurrentCost = self.clickUpgradeInitialCost
 
 --SetUp Marketplace
 	msg.post("/UI#Marketplace", "Updateitem1", {count = self.item1Count, price = self.item1CurrentCost})
@@ -69,23 +73,9 @@ function update(self, dt)
 
 end
 
-function new_price(self, tipo, ammount)
-	local new_price = 0
-	new_price = ((ammount + 20) ^ 2) / 40
-	if tipo == "item1" then
-		new_price = new_price 
-	elseif tipo == "item2" then
- 		new_price = new_price * (self.item2InitialCost/self.item1InitialCost)
-	elseif tipo == "item3" then
-		new_price = new_price * (self.item3InitialCost/self.item1InitialCost)
-	elseif tipo == "item4" then
-		new_price = new_price * (self.item4InitialCost/self.item1InitialCost)
-	else
-		print("ERROR! : Trying to solve new price but no type was specified.")
-		return new_price 
-	end
-
-	return math.floor(new_price)
+local function new_price(self, current_price, scaler)
+	
+	return string.format("%.0f", current_price * scaler)
 
 end
 
@@ -160,7 +150,8 @@ function on_message(self, message_id, message, sender)
 
 	if message_id == hash("upgradeClick") then
 		if bitcoinCount >= self.currentClickUpgradePrice then
-			
+			self.PClevel = self.PClevel + 1
+			self.currentClickUpgradePrice = 
 		end
 	end
 end
