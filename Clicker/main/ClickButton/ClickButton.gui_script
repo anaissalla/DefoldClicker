@@ -11,10 +11,7 @@ function init(self)
 
 end
 
-local function resetSpriteSize(self, handle, time_elapsed)
-	--local clickButtonSprite = gui.get_node("clickButton")
-	gui.set_size(self.clickButtonSprite, vmath.vector3(200, 200, 0))
-end
+
 
 local function GetNewCoinsPerClick()
 	return self.coinsPerClick * self.coinsPerClickScaler
@@ -57,9 +54,8 @@ function on_input(self, action_id, action)
 			msg.post("/Main#main", "addCoin", {coins = self.coinsPerClick})
 
 			--visual feeedback
-			gui.set_size(self.clickButtonSprite, vmath.vector3(640,640,0))
-
-			gui.animate(self.clickButtonSprite, "size", vmath.vector3(620, 620, 0), gui.EASING_OUTELASTIC, 1)
+			gui.set_size(self.clickButtonSprite, vmath.vector3(655,515,0))
+			gui.animate(self.clickButtonSprite, "size", vmath.vector3(640, 500, 0), gui.EASING_OUTELASTIC, 1, 0)
 
 			--gui.set_size(self.clickButtonSprite, vmath.vector3(180, 180, 0))
 			--timer.delay(0.1, false, resetSpriteSize)

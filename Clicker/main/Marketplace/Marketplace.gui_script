@@ -18,8 +18,6 @@ function init(self)
  	self.item4Price = gui.get_node("item4Price")
  	self.item4Pie = gui.get_node("item4Pie")
  	self.item4Count = gui.get_node("item4Amount")
-
-
 end
 
 function short_number(number)
@@ -55,8 +53,6 @@ function on_message(self, message_id, message, sender)
 		gui.set_text(self.item4Count, message.count)
 		gui.set_text(self.item4Price, message.price)
 	end
-
-	
 
 	--update Availability
 	if message_id == hash("UpdateAvailability") then
@@ -123,7 +119,6 @@ function on_input(self, action_id, action)
 		end
 			
 		if gui.pick_node(upgradeButton, action.x, action.y) then
-			msg.post("/Main#main", "upgradeClick")	
 			msg.post("/UI#ClickButton", "upgradeClickSprite")
 		end
 	end	
