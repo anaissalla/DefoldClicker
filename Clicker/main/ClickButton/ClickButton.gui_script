@@ -1,14 +1,20 @@
+go.property("coinsPerClickScaler", 4)
+
 function init(self)
 
 	msg.post(".", "acquire_input_focus")
 
 	self.update = 0
-	self.coins = 1
+	self.coinsPerClick = 1
 	self.clickButtonSprite = gui.get_node("clickButton")
 
 
 end
 
+
+
+local function GetNewCoinsPerClick()
+	return self.coinsPerClick * self.coinsPerClickScaler
 
 
 function on_message(self, message_id, message, sender)
@@ -20,22 +26,21 @@ function on_message(self, message_id, message, sender)
 		print("upgradeClickSprite")
 		local sprite = gui.get_node("clickButton")
 
+		self.coinsPerClick = GetNewCoinsPerClick()
+		self.update = self.update +1
+
 		if (self.update == 0) then
 			gui.play_flipbook(sprite, "Computer2")
-			self.update = self.update + 1
-			self.coins =  self.coins + 1
+			
 		elseif (self.update == 1) then
 			gui.play_flipbook(sprite, "Computer3")
-			self.update = self.update +1
-			self.coins =  self.coins + 1
+			
 		elseif (self.update == 2) then
 			gui.play_flipbook(sprite, "Computer4")
-			self.update = self.update +1
-			self.coins =  self.coins + 1
+			
 		elseif (self.update == 3) then
 			gui.play_flipbook(sprite, "Computer5")
-			self.update = self.update +1
-			self.coins =  self.coins + 1
+			
 		end
 	end
 end
@@ -46,7 +51,7 @@ function on_input(self, action_id, action)
 
 		if gui.pick_node(self.clickButtonSprite, action.x, action.y)then
 
-			msg.post("/Main#main", "addCoin", {coins = self.coins})
+			msg.post("/Main#main", "addCoin", {coins = self.coinsPerClick})
 
 			--visual feeedback
 			gui.set_size(self.clickButtonSprite, vmath.vector3(655,515,0))

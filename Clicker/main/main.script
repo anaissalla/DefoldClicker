@@ -157,6 +157,12 @@ function on_message(self, message_id, message, sender)
 			msg.post(".", "UpdateBitcoinSpeed")
 		end
 	end
+
+	if message_id == hash("upgradeClick") then
+		if bitcoinCount >= self.currentClickUpgradePrice then
+			
+		end
+	end
 end
 
 
