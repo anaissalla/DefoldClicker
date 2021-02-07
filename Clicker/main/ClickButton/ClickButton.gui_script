@@ -1,5 +1,3 @@
-go.property("coinsPerClickScaler", 4)
-
 function init(self)
 
 	msg.post(".", "acquire_input_focus")
@@ -10,6 +8,11 @@ function init(self)
 	self.currentAnimation = 0
 
 	self.coinsPerClickScaler = 4
+	self.Computer1Frames = 81
+	self.Computer2Frames = 75
+	self.Computer3Frames = 64
+	self.Computer4Frames = 81
+	self.Computer5Frames = 81
 end
 
 
@@ -40,19 +43,38 @@ function on_message(self, message_id, message, sender)
 			gui.play_flipbook(sprite, "Computer5")
 			
 		end
+		self.currentAnimation = 0
 		self.coinsPerClick = GetNewCoinsPerClick(self)
 		self.update = self.update +1
 	end
 end
 
-function computerAniDone(self, node)
-	self.currentAnimation = 0;
+function playNextFrame(self, node, animationName, totalFrames)
+	self.currentAnimation = (self.currentAnimation + 1/totalFrames)
+	local  play_properties = {
+		offset = self.currentAnimation,
+		playback_rate = 0
+	}
+	gui.play_flipbook(node, animationName ,nil, play_properties)
 end
 
+
 function animate_computer(self)
-	if(self.update == 1) then
-		gui.play_flipbook(sprite, "Computer2Ani", computerAniDone(self, gui.get_node("clickButton")), {offset = self.currentAnimation, playback_rate = 0} )
-		self.currentAnimation = self.currentAnimation + 1
+	if(self.currentAnimation == 1) then
+		self.currentanimation = 0
+	end
+	
+	if(self.update == 0) then
+		local screen = gui.get_node("Screen1")
+		playNextFrame(self, screen, "Screen1", self.Computer1Frames)
+	elseif(self.update == 1) then
+		playNextFrame(self, "Computer2Ani", self.Computer2Frames)
+	elseif(self.update == 2) then
+		playNextFrame(self, "Computer3Ani", self.Computer3Frames)
+	elseif(self.update == 3) then
+		playNextFrame(self, "Computer4Ani", self.Computer4Frames)
+	elseif(self.update == 4) then
+		playNextFrame(self, "Computer5Ani", self.Computer5Frames)
 	end
 end
 
