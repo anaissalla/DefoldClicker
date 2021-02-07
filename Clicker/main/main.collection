@@ -44,12 +44,17 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"item3InitialCost\"\n"
-  "    value: \"5000.0\"\n"
+  "    value: \"20.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
   "    id: \"item4InitialCost\"\n"
-  "    value: \"100000.0\"\n"
+  "    value: \"30.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"costScaler\"\n"
+  "    value: \"0.12\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -183,26 +188,6 @@ embedded_instances {
     x: 0.0
     y: 0.0
     z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "Racks"
-  data: ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: -0.5
   }
   rotation {
     x: 0.0

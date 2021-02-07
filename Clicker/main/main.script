@@ -112,6 +112,9 @@ function on_message(self, message_id, message, sender)
 
 			--Update Game Info
 			msg.post(".", "UpdateBitcoinSpeed")
+
+			--Update Rack
+			msg.post("/UI#Racks", "AddGPU", {tipo = 1})
 			
 		end
 	end 	

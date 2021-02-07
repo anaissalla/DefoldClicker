@@ -222,7 +222,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Laptop"
+  text: "Envy QTX6500"
   font: "Montserrat"
   id: "item1Name"
   xanchor: XANCHOR_NONE

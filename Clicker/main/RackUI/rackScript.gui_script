@@ -4,13 +4,13 @@ local function SetGPU(self, coords, tipo )
 	if tipo == 0 then
 		gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_empty")
 	elseif tipo == 1 then 
-		if coords.y == 4 then
+		if coords.x == 4 then
 			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_front")
 		else
 			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_back")
 		end
 	else
-
+		print("ERROR!: Wrong GPU type")
 	end
 end
 
@@ -27,10 +27,7 @@ local function GetReferences( self )
 	for i=1,7 do
 		references[i] = {}
 		for j=1,4 do
-			
-			nodeName = "Slot" .. i .. j
-			print(nodeName)
-			references[i][j] = gui.get_node(nodeName)
+			references[i][j] = gui.get_node("Slot" .. i .. j)
 		end
 	end
 
@@ -55,14 +52,34 @@ function init(self)
 	gui.set_render_order(0)
 
 	RemoveAllGPU(self)
-	SetGPU(self, {y = 2, x = 3}, 1)
+	--SetGPU(self, {y = 2, x = 3}, 1)
 end
 
+local function GetFirsFreeSlot(self)
+	for i=1,7 do
+		for j=1,4 do
+			if self.slotsType[i][j] == 0 then
+				return {x = j, y = i, slot = "SLOT_FOUND"}
+			end
+		end
+	end
+	return {slot = "NO_SLOT"}
+end
 
 function on_message(self, message_id, message, sender)
 	-- Add message-handling code here
 	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
+	if message_id == hash("AddGPU") then 
+		local position = GetFirsFreeSlot(self)
+		if position.slot == "NO_SLOT" then
+			print("ALERT!: No solts abilable")
+		elseif position.slot == "SLOT_FOUND" then
+			SetGPU(self, position, message.tipo)
+		else
+			print("ERROR!: Malfunction ocurred on finding slot")
+		end
+	end	
 end
 
 function on_input(self, action_id, action)
