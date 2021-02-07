@@ -31,16 +31,20 @@ function on_message(self, message_id, message, sender)
 		local sprite = gui.get_node("clickButton")
 
 		if (self.update == 0) then
-			gui.play_flipbook(sprite, "Computer2")
+			gui.set_texture(self.clickButtonSprite, "Computer2")
+			gui.play_flipbook(self.clickButtonSprite, "Computer2")
 			
 		elseif (self.update == 1) then
-			gui.play_flipbook(sprite, "Computer3")
+			gui.set_texture(self.clickButtonSprite, "Computer3")
+			gui.play_flipbook(self.clickButtonSprite, "Ani")
 			
 		elseif (self.update == 2) then
-			gui.play_flipbook(sprite, "Computer4")
+			gui.set_texture(self.clickButtonSprite, "Computer4")
+			gui.play_flipbook(self.clickButtonSprite, "Ani")
 			
 		elseif (self.update == 3) then
-			gui.play_flipbook(sprite, "Computer5")
+			gui.set_texture(self.clickButtonSprite, "Computer5")
+			gui.play_flipbook(self.clickButtonSprite, "Ani")
 			
 		end
 		self.currentAnimation = 0
@@ -49,13 +53,13 @@ function on_message(self, message_id, message, sender)
 	end
 end
 
-function playNextFrame(self, node, animationName, totalFrames)
+function playNextFrame(self, animationName, totalFrames)
 	self.currentAnimation = (self.currentAnimation + 1/totalFrames)
 	local  play_properties = {
 		offset = self.currentAnimation,
 		playback_rate = 0
 	}
-	gui.play_flipbook(node, animationName ,nil, play_properties)
+	gui.play_flipbook(self.clickButtonSprite, animationName ,nil , play_properties)
 end
 
 
@@ -65,17 +69,18 @@ function animate_computer(self)
 	end
 	
 	if(self.update == 0) then
-		local screen = gui.get_node("Screen1")
-		playNextFrame(self, screen, "Screen1", self.Computer1Frames)
+		playNextFrame(self, "Ani", self.Computer1Frames)
 	elseif(self.update == 1) then
-		playNextFrame(self, "Computer2Ani", self.Computer2Frames)
-	elseif(self.update == 2) then
-		playNextFrame(self, "Computer3Ani", self.Computer3Frames)
-	elseif(self.update == 3) then
-		playNextFrame(self, "Computer4Ani", self.Computer4Frames)
-	elseif(self.update == 4) then
-		playNextFrame(self, "Computer5Ani", self.Computer5Frames)
+		playNextFrame(self, "Ani", self.Computer2Frames)
 	end
+	
+	--elseif(self.update == 2) then
+	--	playNextFrame(self, "Computer3Ani", self.Computer3Frames)
+	--elseif(self.update == 3) then
+	--	playNextFrame(self, "Computer4Ani", self.Computer4Frames)
+	--elseif(self.update == 4) then
+	--	playNextFrame(self, "Computer5Ani", self.Computer5Frames)
+	--end
 end
 
 function on_input(self, action_id, action)
