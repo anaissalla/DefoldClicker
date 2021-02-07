@@ -19,6 +19,10 @@ textures {
   name: "Computer2"
   texture: "/main/ClickButton/Computer2.atlas"
 }
+textures {
+  name: "main"
+  texture: "/main/main.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -79,8 +83,6 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
-<<<<<<< HEAD
-=======
 nodes {
   position {
     x: 90.0
@@ -190,7 +192,6 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
 }
->>>>>>> 9c9f78c83a7d772e679252bb60dafb87285b9eb4
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512

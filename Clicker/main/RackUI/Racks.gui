@@ -67,7 +67,7 @@ nodes {
   position {
     x: 10.0
     y: -10.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -122,7 +122,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -177,7 +177,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -232,7 +232,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -287,7 +287,7 @@ nodes {
   position {
     x: 10.0
     y: -130.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -342,7 +342,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -397,7 +397,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -452,7 +452,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -507,7 +507,7 @@ nodes {
   position {
     x: 10.0
     y: -250.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -562,7 +562,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -617,7 +617,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -672,7 +672,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -727,7 +727,7 @@ nodes {
   position {
     x: 10.0
     y: -370.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -782,7 +782,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -837,7 +837,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -892,7 +892,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -947,7 +947,7 @@ nodes {
   position {
     x: 10.0
     y: -490.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1002,7 +1002,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1057,7 +1057,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1112,7 +1112,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1167,7 +1167,7 @@ nodes {
   position {
     x: 10.0
     y: -610.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1222,7 +1222,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1277,7 +1277,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1332,7 +1332,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1387,7 +1387,7 @@ nodes {
   position {
     x: 10.0
     y: -730.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1442,7 +1442,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1497,7 +1497,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
@@ -1552,7 +1552,7 @@ nodes {
   position {
     x: 100.0
     y: 0.0
-    z: -0.5
+    z: 0.0
     w: 1.0
   }
   rotation {
