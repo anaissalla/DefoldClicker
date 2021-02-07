@@ -1,0 +1,78 @@
+
+local function SetGPU(self, coords, tipo )		
+	self.slotsType[coords.y][coords.x] = tipo
+	if tipo == 0 then
+		gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_empty")
+	elseif tipo == 1 then 
+		if coords.y == 4 then
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_front")
+		else
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_back")
+		end
+	else
+
+	end
+end
+
+local function RemoveAllGPU(self)
+	for y=1,7 do
+		for x=1,4 do
+			self.slotsType[y][x] = 0
+			gui.play_flipbook(self.slotReference[y][x], "fan_empty")
+		end
+	end
+end
+local function GetReferences( self )
+	local references = {}
+	for i=1,7 do
+		references[i] = {}
+		for j=1,4 do
+			
+			nodeName = "Slot" .. i .. j
+			print(nodeName)
+			references[i][j] = gui.get_node(nodeName)
+		end
+	end
+
+	return references
+end
+
+
+function init(self)
+	self.holaa = gui.get_node("Slot11")
+	self.slotsType = {
+		{0,0,0,0},
+		{0,0,0,0},
+		{0,0,0,0},
+		{0,0,0,0},
+		{0,0,0,0},
+		{0,0,0,0},
+		{0,0,0,0}
+	}
+	self.slotReference = GetReferences(self)
+
+	self.rack = gui.get_node("Rack")
+	gui.set_render_order(0)
+
+	RemoveAllGPU(self)
+	SetGPU(self, {y = 2, x = 3}, 1)
+end
+
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end

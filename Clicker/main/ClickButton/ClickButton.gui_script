@@ -13,6 +13,7 @@ function init(self)
 	self.Computer3Frames = 64
 	self.Computer4Frames = 81
 	self.Computer5Frames = 81
+	gui.set_render_order(15)
 end
 
 
