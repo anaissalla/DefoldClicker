@@ -12,7 +12,7 @@ local function SetGPU(self, coords, tipo )
 	else
 		print("ERROR!: Wrong GPU type")
 	end
-	if coords.x = 4 and coords.y == 7 then
+	if coords.x == 4 and coords.y == 7 then
 
 		--Disable market
 
