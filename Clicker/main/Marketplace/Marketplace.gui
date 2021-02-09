@@ -381,7 +381,7 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 90.0
+    z: 180.0
     w: 1.0
   }
   scale {
@@ -391,20 +391,20 @@ nodes {
     w: 1.0
   }
   size {
-    x: 80.0
-    y: 80.0
+    x: 90.0
+    y: 90.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.2
-    y: 0.2
-    z: 0.2
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_PIE
-  blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  blend_mode: BLEND_MODE_MULT
+  texture: "main/logo"
   id: "item1Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -413,10 +413,10 @@ nodes {
   parent: "item1Image"
   layer: ""
   inherit_alpha: true
-  outerBounds: PIEBOUNDS_ELLIPSE
-  innerRadius: 25.0
+  outerBounds: PIEBOUNDS_RECTANGLE
+  innerRadius: 0.0
   perimeterVertices: 50
-  pieFillAngle: 350.0
+  pieFillAngle: 360.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
