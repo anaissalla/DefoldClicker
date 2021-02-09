@@ -18,6 +18,8 @@ function init(self)
 	Coffee = gui.get_node("Coffee")
 	gui.set_enabled(Leds, false)
 	gui.set_enabled(Coffee, false)
+
+	gui.set_render_order(15)
 	
 end
 
@@ -62,7 +64,6 @@ function on_message(self, message_id, message, sender)
 			gui.set_texture(self.clickButtonSprite, "Computer5")
 			gui.play_flipbook(self.clickButtonSprite, "Computer5")
 			gui.set_enabled(Leds, true)
-			gui.set_render_order(15)
 			gui.play_flipbook(Leds, "Leds_Ani")
 		end
 		self.currentAnimation = 0
