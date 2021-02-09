@@ -11,6 +11,10 @@ textures {
   name: "main"
   texture: "/main/main.atlas"
 }
+textures {
+  name: "marketplace"
+  texture: "/main/Marketplace/marketplace.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -349,7 +353,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "main/logo"
+  texture: "marketplace/Item1Green"
   id: "item1Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -381,12 +385,12 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 180.0
+    z: 0.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: -1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
@@ -397,14 +401,14 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.4
+    y: 0.4
+    z: 0.4
     w: 1.0
   }
   type: TYPE_PIE
-  blend_mode: BLEND_MODE_MULT
-  texture: "main/logo"
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "marketplace/Item1Green"
   id: "item1Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -416,11 +420,11 @@ nodes {
   outerBounds: PIEBOUNDS_RECTANGLE
   innerRadius: 0.0
   perimeterVertices: 50
-  pieFillAngle: 360.0
+  pieFillAngle: 180.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.72
+  alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
