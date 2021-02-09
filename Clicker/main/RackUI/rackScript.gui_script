@@ -52,7 +52,7 @@ function new_rack(self, handle, time_elapsed)
 	gui.set_enabled(self.mock, true)
 	gui.set_scale(self.mock, vmath.vector3(1))
 	gui.move_above(self.mock, self.rack)
-	--gui.play_flipbook(self.mock, "rack_animation")
+	
 		
 	--move rack out
 	gui.set_position(self.rack, vmath.vector3(-600, 910 , 0))

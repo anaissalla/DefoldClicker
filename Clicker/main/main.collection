@@ -44,7 +44,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"item3InitialCost\"\n"
-  "    value: \"20.0\"\n"
+  "    value: \"2.006E9\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"

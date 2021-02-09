@@ -61,7 +61,7 @@ function update(self, dt)
 
 	--Update coins
 	bitcoinCount = bitcoinCount + self.currentProduction * dt
-	msg.post("/UI#Info", "UpdateBitcoinCount", {coins = math.floor(bitcoinCount)})
+	msg.post("/UI#Info", "UpdateBitcoinCount", {coins = bitcoinCount})
 
 	--Update Marketplace price color
 	local item1Available = bitcoinCount / self.item1CurrentCost
@@ -154,13 +154,18 @@ function on_message(self, message_id, message, sender)
 	end
 
 	if message_id == hash("upgradeClick") then
-		if bitcoinCount >= self.clickUpgradeCurrentCost then
-			self.PClevel = self.PClevel + 1
+		if self.PClevel < 5 then
+			if bitcoinCount >= self.clickUpgradeCurrentCost then
+				self.PClevel = self.PClevel + 1
 			
-			msg.post(".", "addCoins", {coins = -self.clickUpgradeCurrentCost})
+				msg.post(".", "addCoins", {coins = -self.clickUpgradeCurrentCost})
 
-			self.clickUpgradeCurrentCost = new_price(self.clickUpgradeCurrentCost, self.clickUpgradeCostScaler)
-			msg.post("/UI#ClickButton", "upgradeClickSprite")
+				self.clickUpgradeCurrentCost = new_price(self.clickUpgradeCurrentCost, self.clickUpgradeCostScaler)
+				msg.post("/UI#ClickButton", "upgradeClickSprite")
+
+				--Change button name to max lvl
+				msg.post("/UI#Marketplace", "MaxLevelReached")
+			end
 		end
 	end
 end

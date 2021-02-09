@@ -35,7 +35,7 @@ function on_message(self, message_id, message, sender)
 	--	msg.post(".", "acquire_input_focus")
 	--end
 	if message_id == hash("upgradeClickSprite") then
-		print("upgradeClickSprite")
+		--print("upgradeClickSprite")
 		local sprite = gui.get_node("clickButton")
 
 		if gui.is_enabled(Coffee) then
@@ -69,7 +69,7 @@ function on_message(self, message_id, message, sender)
 		self.currentAnimation = 0
 		self.coinsPerClick = GetNewCoinsPerClick(self)
 		self.update = self.update +1
-		print(self.currentAnimation)
+		--print(self.currentAnimation)
 		
 	end
 end
@@ -90,7 +90,7 @@ end
 
 
 function animate_computer(self)
-	print(self.currentAnimation)
+	--print(self.currentAnimation)
 	
 
 	

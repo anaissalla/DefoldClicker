@@ -22,16 +22,18 @@ function init(self)
 	gui.set_render_order(14)
 end
 
-function short_number(number)
+function short_number(number) 
 	local shorted_number
-	if number < 10^6  then
-		shorted_number = number
+	if number < 10^3  then
+		shorted_number = string.format("%.1f", number)
+	elseif number < 10^6 then 
+		shorted_number = string.format("%.f", number)
 	elseif number < 10^9 then
 		number = number / 10^6
-		shorted_number = string.format("%3.3f", number) .. " million"
+		shorted_number = string.format("%3.3f", number) .. "M"
 	elseif number < 10^12 then
 		number = number / 10^9
-		shorted_number = string.format("%3.3f", number) .. " billion"
+		shorted_number = string.format("%3.3f", number) .. "B"
 	end
 	return shorted_number
 end
@@ -40,20 +42,20 @@ function on_message(self, message_id, message, sender)
 	--update amount and price
 	if message_id == hash("Updateitem1") then
 		gui.set_text(self.item1Count, message.count)
-		gui.set_text(self.item1Price, message.price)
+		gui.set_text(self.item1Price, short_number(message.price))
 	end	
 	if message_id == hash("Updateitem2") then
 		gui.set_text(self.item2Count, message.count)
-		gui.set_text(self.item2Price, message.price)
+		gui.set_text(self.item2Price, short_number(message.price))
 	end
 	if message_id == hash("Updateitem3") then
 		gui.set_text(self.item3Count, message.count)
-		gui.set_text(self.item3Price, message.price)
+		gui.set_text(self.item3Price, short_number(message.price))
 	end
 	if message_id == hash("Updateitem4") then
 		
 		gui.set_text(self.item4Count, message.count)
-		gui.set_text(self.item4Price, message.price)
+		gui.set_text(self.item4Price, short_number(message.price))
 	end
 
 	--update Availability
