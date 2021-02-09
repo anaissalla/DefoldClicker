@@ -57,21 +57,24 @@ function on_message(self, message_id, message, sender)
 end
 
 function playNextFrame(self, animationName, totalFrames)
-	self.currentAnimation = (self.currentAnimation + 1/totalFrames)
+	self.currentAnimation = (self.currentAnimation + 1/totalFrames)	
 	local  play_properties = {
 		offset = self.currentAnimation,
 		playback_rate = 0
 	}
 	gui.play_flipbook(self.clickButtonSprite, animationName ,nil , play_properties)
+
+	
+	if (self.currentAnimation > 0.99 and self.currentAnimation < 1.01) then
+		self.currentAnimation = 0	
+	end
 end
 
 
 function animate_computer(self)
 	print(self.currentAnimation)
 	
-	if (self.currentAnimation == 1) then
-		self.currentAnimation = 0		
-	end
+
 	
 	if(self.update == 0) then
 		playNextFrame(self, "Ani", self.Computer1Frames)
