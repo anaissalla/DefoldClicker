@@ -12,6 +12,13 @@ local function SetGPU(self, coords, tipo )
 	else
 		print("ERROR!: Wrong GPU type")
 	end
+	if coords.x = 4 and coords.y == 7 then
+
+		--Disable market
+
+		--call new rack
+		timer.delay(0.5, false, new_rack)
+	end
 end
 
 local function RemoveAllGPU(self)
@@ -34,9 +41,22 @@ local function GetReferences( self )
 	return references
 end
 
+function new_rack(self, handle, time_elapsed)
+	--enable mock rack img on tip
+		
+	--move rack out
+
+	--reset rack
+
+	--animate mock rack out
+
+	--animate rack in
+
+
+end
 
 function init(self)
-	self.holaa = gui.get_node("Slot11")
+	
 	self.slotsType = {
 		{0,0,0,0},
 		{0,0,0,0},
@@ -49,6 +69,8 @@ function init(self)
 	self.slotReference = GetReferences(self)
 
 	self.rack = gui.get_node("Rack")
+
+
 	gui.set_render_order(0)
 
 	RemoveAllGPU(self)
