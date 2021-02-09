@@ -9,15 +9,21 @@ local function SetGPU(self, coords, tipo )
 		else
 			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_back_animation")
 		end
+	elseif tipo == 2 then
+
+	elseif tipo == 3 then
+
+	elseif tipo == 4 then
+
 	else
 		print("ERROR!: Wrong GPU type")
 	end
 	if coords.x == 4 and coords.y == 7 then
 
 		--Disable market
-
+		msg.post("/UI#Marketplace", "SetEnablePurchase", {enable = false})
 		--call new rack
-		timer.delay(0.5, false, new_rack)
+		timer.delay(0.2, false, new_rack)
 	end
 end
 
@@ -43,20 +49,43 @@ end
 
 function new_rack(self, handle, time_elapsed)
 	--enable mock rack img on tip
+	gui.set_enabled(self.mock, true)
+	gui.set_scale(self.mock, vmath.vector3(1))
+	gui.move_above(self.mock, self.rack)
+	--gui.play_flipbook(self.mock, "rack_animation")
 		
 	--move rack out
+	gui.set_position(self.rack, vmath.vector3(-600, 910 , 0))
 
 	--reset rack
+	RemoveAllGPU(self)
+
+	--send mock to the back
+	gui.move_below(self.mock, self.rack)
 
 	--animate mock rack out
+	gui.animate(self.mock, "scale", vmath.vector3(0.8, 0.8, 1),gui.EASING_INOUTSINE , 1 )
 
 	--animate rack in
+	gui.animate(self.rack, "position", self.rackPos, gui.EASING_OUTBACK, 1, 0.4, animation_finished)
 
 
 end
 
+local function animation_finished( self, node )
+	--enable market 
+	msg.post("/UI#Marketplace", "SetEnablePurchase", {enable = true})
+
+	--Disable mock
+	gui.set_enabled(self.mock, false)
+end
+
 function init(self)
-	
+
+	--Ajust render order
+	gui.set_render_order(0)
+
+	--declare a matrix to define slot types
 	self.slotsType = {
 		{0,0,0,0},
 		{0,0,0,0},
@@ -66,15 +95,23 @@ function init(self)
 		{0,0,0,0},
 		{0,0,0,0}
 	}
+	--declare a matrix to store the references to all nodes
 	self.slotReference = GetReferences(self)
 
+	--store references to rack and mock
 	self.rack = gui.get_node("Rack")
+	self.mock = gui.get_node("Mock")
 
+	--Disable mock
+	gui.set_enabled(self.mock, false)
 
-	gui.set_render_order(0)
+	--store rack and mock pos
+	self.rackPos = gui.get_position(self.rack)
+	self.mockPos = gui.get_position(self.mock)
 
+ 	--initalize rack
 	RemoveAllGPU(self)
-	--SetGPU(self, {y = 2, x = 3}, 1)
+
 end
 
 local function GetFirsFreeSlot(self)
@@ -89,9 +126,7 @@ local function GetFirsFreeSlot(self)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+
 	if message_id == hash("AddGPU") then 
 		local position = GetFirsFreeSlot(self)
 		if position.slot == "NO_SLOT" then
@@ -105,13 +140,5 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+
 end
