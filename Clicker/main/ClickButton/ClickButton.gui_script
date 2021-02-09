@@ -37,15 +37,15 @@ function on_message(self, message_id, message, sender)
 			
 		elseif (self.update == 1) then
 			gui.set_texture(self.clickButtonSprite, "Computer3")
-			gui.play_flipbook(self.clickButtonSprite, "Ani")
+			gui.play_flipbook(self.clickButtonSprite, "Computer3")
 			
 		elseif (self.update == 2) then
 			gui.set_texture(self.clickButtonSprite, "Computer4")
-			gui.play_flipbook(self.clickButtonSprite, "Ani")
+			gui.play_flipbook(self.clickButtonSprite, "Computer4")
 			
 		elseif (self.update == 3) then
 			gui.set_texture(self.clickButtonSprite, "Computer5")
-			gui.play_flipbook(self.clickButtonSprite, "Ani")
+			gui.play_flipbook(self.clickButtonSprite, "Computer5")
 			
 		end
 		self.currentAnimation = 0
@@ -73,15 +73,13 @@ function animate_computer(self)
 		playNextFrame(self, "Ani", self.Computer1Frames)
 	elseif(self.update == 1) then
 		playNextFrame(self, "Ani", self.Computer2Frames)
+	elseif(self.update == 2) then
+		playNextFrame(self, "Ani", self.Computer3Frames)
+	elseif(self.update == 3) then
+		playNextFrame(self, "Ani", self.Computer4Frames)
+	elseif(self.update == 4) then
+		playNextFrame(self, "Ani", self.Computer5Frames)
 	end
-	
-	--elseif(self.update == 2) then
-	--	playNextFrame(self, "Computer3Ani", self.Computer3Frames)
-	--elseif(self.update == 3) then
-	--	playNextFrame(self, "Computer4Ani", self.Computer4Frames)
-	--elseif(self.update == 4) then
-	--	playNextFrame(self, "Computer5Ani", self.Computer5Frames)
-	--end
 end
 
 function on_input(self, action_id, action)

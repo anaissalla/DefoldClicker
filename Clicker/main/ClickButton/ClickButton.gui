@@ -23,6 +23,10 @@ textures {
   name: "main"
   texture: "/main/main.atlas"
 }
+textures {
+  name: "Computer3"
+  texture: "/main/ClickButton/Computer3.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
