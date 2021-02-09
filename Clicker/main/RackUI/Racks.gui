@@ -96,7 +96,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot11"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -151,7 +151,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot12"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -206,7 +206,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot13"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -261,7 +261,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot14"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -316,7 +316,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot21"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -371,7 +371,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot22"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -426,7 +426,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot23"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -481,7 +481,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot24"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -536,7 +536,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot31"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -591,7 +591,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot32"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -646,7 +646,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot33"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -701,7 +701,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot34"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -756,7 +756,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot41"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -811,7 +811,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot42"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -866,7 +866,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot43"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -921,7 +921,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot44"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -976,7 +976,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot51"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1031,7 +1031,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot52"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1086,7 +1086,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot53"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1141,7 +1141,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot54"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1196,7 +1196,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot61"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1251,7 +1251,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot62"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1306,7 +1306,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot63"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1361,7 +1361,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot64"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1416,7 +1416,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot71"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1471,7 +1471,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot72"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1526,7 +1526,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_back"
+  texture: "Racks/fan_back_animation"
   id: "Slot73"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1581,7 +1581,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/fan_front"
+  texture: "Racks/fan_front_animation"
   id: "Slot74"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

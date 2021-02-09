@@ -5,9 +5,9 @@ local function SetGPU(self, coords, tipo )
 		gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_empty")
 	elseif tipo == 1 then 
 		if coords.x == 4 then
-			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_front")
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_front_animation")
 		else
-			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_back")
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_back_animation")
 		end
 	else
 		print("ERROR!: Wrong GPU type")
