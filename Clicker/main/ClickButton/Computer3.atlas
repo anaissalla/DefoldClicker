@@ -5,259 +5,195 @@ images {
 animations {
   id: "Ani"
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting01.png"
+    image: "/assets/images/Computers/Computer3/Computer3_01.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting02.png"
+    image: "/assets/images/Computers/Computer3/Computer3_02.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting03.png"
+    image: "/assets/images/Computers/Computer3/Computer3_03.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting04.png"
+    image: "/assets/images/Computers/Computer3/Computer3_04.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting05.png"
+    image: "/assets/images/Computers/Computer3/Computer3_05.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting06.png"
+    image: "/assets/images/Computers/Computer3/Computer3_06.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting07.png"
+    image: "/assets/images/Computers/Computer3/Computer3_07.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting08.png"
+    image: "/assets/images/Computers/Computer3/Computer3_08.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting09.png"
+    image: "/assets/images/Computers/Computer3/Computer3_09.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting10.png"
+    image: "/assets/images/Computers/Computer3/Computer3_10.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting11.png"
+    image: "/assets/images/Computers/Computer3/Computer3_11.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting12.png"
+    image: "/assets/images/Computers/Computer3/Computer3_12.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting13.png"
+    image: "/assets/images/Computers/Computer3/Computer3_13.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting14.png"
+    image: "/assets/images/Computers/Computer3/Computer3_14.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting15.png"
+    image: "/assets/images/Computers/Computer3/Computer3_15.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting16.png"
+    image: "/assets/images/Computers/Computer3/Computer3_16.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting17.png"
+    image: "/assets/images/Computers/Computer3/Computer3_17.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting18.png"
+    image: "/assets/images/Computers/Computer3/Computer3_18.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting19.png"
+    image: "/assets/images/Computers/Computer3/Computer3_19.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting20.png"
+    image: "/assets/images/Computers/Computer3/Computer3_20.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting21.png"
+    image: "/assets/images/Computers/Computer3/Computer3_21.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting22.png"
+    image: "/assets/images/Computers/Computer3/Computer3_22.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting23.png"
+    image: "/assets/images/Computers/Computer3/Computer3_23.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting24.png"
+    image: "/assets/images/Computers/Computer3/Computer3_24.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting25.png"
+    image: "/assets/images/Computers/Computer3/Computer3_25.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting26.png"
+    image: "/assets/images/Computers/Computer3/Computer3_26.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting27.png"
+    image: "/assets/images/Computers/Computer3/Computer3_27.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting28.png"
+    image: "/assets/images/Computers/Computer3/Computer3_28.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting29.png"
+    image: "/assets/images/Computers/Computer3/Computer3_29.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting30.png"
+    image: "/assets/images/Computers/Computer3/Computer3_30.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting31.png"
+    image: "/assets/images/Computers/Computer3/Computer3_31.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting32.png"
+    image: "/assets/images/Computers/Computer3/Computer3_32.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting33.png"
+    image: "/assets/images/Computers/Computer3/Computer3_33.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting34.png"
+    image: "/assets/images/Computers/Computer3/Computer3_34.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting35.png"
+    image: "/assets/images/Computers/Computer3/Computer3_35.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting36.png"
+    image: "/assets/images/Computers/Computer3/Computer3_36.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting37.png"
+    image: "/assets/images/Computers/Computer3/Computer3_37.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting38.png"
+    image: "/assets/images/Computers/Computer3/Computer3_38.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting39.png"
+    image: "/assets/images/Computers/Computer3/Computer3_39.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting40.png"
+    image: "/assets/images/Computers/Computer3/Computer3_40.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting41.png"
+    image: "/assets/images/Computers/Computer3/Computer3_41.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting42.png"
+    image: "/assets/images/Computers/Computer3/Computer3_42.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting43.png"
+    image: "/assets/images/Computers/Computer3/Computer3_43.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting44.png"
+    image: "/assets/images/Computers/Computer3/Computer3_44.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting45.png"
+    image: "/assets/images/Computers/Computer3/Computer3_45.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting46.png"
+    image: "/assets/images/Computers/Computer3/Computer3_46.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting47.png"
+    image: "/assets/images/Computers/Computer3/Computer3_47.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting48.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting49.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting50.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting51.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting52.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting53.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting54.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting55.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting56.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting57.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting58.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting59.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting60.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting61.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting62.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting63.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/assets/images/Computers/Computer3/Computer3Scripting64.png"
+    image: "/assets/images/Computers/Computer3/Computer3_48.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD

@@ -8,11 +8,11 @@ function init(self)
 	self.currentAnimation = 0
 
 	self.coinsPerClickScaler = 4
-	self.Computer1Frames = 81
-	self.Computer2Frames = 75
-	self.Computer3Frames = 64
-	self.Computer4Frames = 81
-	self.Computer5Frames = 81
+	self.Computer1Frames = 63
+	self.Computer2Frames = 58
+	self.Computer3Frames = 49
+	self.Computer4Frames = 62
+	self.Computer5Frames = 62
 	gui.set_render_order(15)
 end
 
@@ -51,6 +51,8 @@ function on_message(self, message_id, message, sender)
 		self.currentAnimation = 0
 		self.coinsPerClick = GetNewCoinsPerClick(self)
 		self.update = self.update +1
+		print(self.currentAnimation)
+		
 	end
 end
 
@@ -65,8 +67,10 @@ end
 
 
 function animate_computer(self)
-	if(self.currentAnimation == 1) then
-		self.currentanimation = 0
+	print(self.currentAnimation)
+	
+	if (self.currentAnimation == 1) then
+		self.currentAnimation = 0		
 	end
 	
 	if(self.update == 0) then

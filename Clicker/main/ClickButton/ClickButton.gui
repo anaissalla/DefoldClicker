@@ -12,6 +12,10 @@ textures {
   texture: "/main/ClickButton/ClickSprite.atlas"
 }
 textures {
+  name: "main"
+  texture: "/main/main.atlas"
+}
+textures {
   name: "Computer1"
   texture: "/main/ClickButton/Computer1.atlas"
 }
@@ -20,12 +24,16 @@ textures {
   texture: "/main/ClickButton/Computer2.atlas"
 }
 textures {
-  name: "main"
-  texture: "/main/main.atlas"
-}
-textures {
   name: "Computer3"
   texture: "/main/ClickButton/Computer3.atlas"
+}
+textures {
+  name: "Computer4"
+  texture: "/main/ClickButton/Computer4.atlas"
+}
+textures {
+  name: "Computer5"
+  texture: "/main/ClickButton/Computer5.atlas"
 }
 background_color {
   x: 0.0
