@@ -1,5 +1,5 @@
 images {
-  image: "/assets/images/Rack/Rack_v2.png"
+  image: "/assets/images/Rack/Rack_v3.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {

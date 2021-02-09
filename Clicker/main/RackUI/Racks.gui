@@ -42,7 +42,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "Racks/Rack_v2"
+  texture: "Racks/Rack_v3"
   id: "Rack"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
