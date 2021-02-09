@@ -13,7 +13,12 @@ function init(self)
 	self.Computer3Frames = 49
 	self.Computer4Frames = 62
 	self.Computer5Frames = 62
-	gui.set_render_order(15)
+
+	Leds = gui.get_node("Leds")
+	Coffee = gui.get_node("Coffee")
+	gui.set_enabled(Leds, false)
+	gui.set_enabled(Coffee, false)
+	
 end
 
 
@@ -31,6 +36,14 @@ function on_message(self, message_id, message, sender)
 		print("upgradeClickSprite")
 		local sprite = gui.get_node("clickButton")
 
+		if gui.is_enabled(Coffee) then
+			gui.set_enabled(Coffee, false)
+		end
+		
+		if gui.is_enabled(Leds) then
+			gui.set_enabled(Leds, false)
+		end
+
 		if (self.update == 0) then
 			gui.set_texture(self.clickButtonSprite, "Computer2")
 			gui.play_flipbook(self.clickButtonSprite, "Computer2")
@@ -38,7 +51,9 @@ function on_message(self, message_id, message, sender)
 		elseif (self.update == 1) then
 			gui.set_texture(self.clickButtonSprite, "Computer3")
 			gui.play_flipbook(self.clickButtonSprite, "Computer3")
-			
+			gui.set_enabled(Coffee, true)
+			gui.set_render_order(15)
+			gui.play_flipbook(Coffee, "Coffee_Ani")
 		elseif (self.update == 2) then
 			gui.set_texture(self.clickButtonSprite, "Computer4")
 			gui.play_flipbook(self.clickButtonSprite, "Computer4")
@@ -46,7 +61,9 @@ function on_message(self, message_id, message, sender)
 		elseif (self.update == 3) then
 			gui.set_texture(self.clickButtonSprite, "Computer5")
 			gui.play_flipbook(self.clickButtonSprite, "Computer5")
-			
+			gui.set_enabled(Leds, true)
+			gui.set_render_order(15)
+			gui.play_flipbook(Leds, "Leds_Ani")
 		end
 		self.currentAnimation = 0
 		self.coinsPerClick = GetNewCoinsPerClick(self)
@@ -101,6 +118,16 @@ function on_input(self, action_id, action)
 			gui.set_size(self.clickButtonSprite, vmath.vector3(655,515,0))
 			gui.animate(self.clickButtonSprite, "size", vmath.vector3(640, 500, 0), gui.EASING_OUTELASTIC, 1, 0)
 
+			if (gui.is_enabled(Leds)) then
+				gui.set_size(Leds, vmath.vector3(655,515,0))
+				gui.animate(Leds, "size", vmath.vector3(640, 500, 0), gui.EASING_OUTELASTIC, 1, 0)
+			end
+
+			if (gui.is_enabled(Coffee)) then
+				gui.set_size(Coffee, vmath.vector3(655,515,0))
+				gui.animate(Coffee, "size", vmath.vector3(640, 500, 0), gui.EASING_OUTELASTIC, 1, 0)
+			end
+			
 			animate_computer(self)
 			--gui.set_size(self.clickButtonSprite, vmath.vector3(180, 180, 0))
 			--timer.delay(0.1, false, resetSpriteSize)
