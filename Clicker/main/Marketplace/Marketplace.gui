@@ -23,8 +23,8 @@ background_color {
 }
 nodes {
   position {
-    x: 1674.0
-    y: 471.0
+    x: 1594.0
+    y: 529.0
     z: 0.0
     w: 1.0
   }
@@ -41,8 +41,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 400.0
-    y: 600.0
+    x: 500.0
+    y: 500.0
     z: 0.0
     w: 1.0
   }
@@ -71,7 +71,7 @@ nodes {
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 1.0
+  alpha: 0.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -101,9 +101,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
@@ -130,7 +130,7 @@ nodes {
   line_break: false
   parent: "Shop"
   layer: ""
-  inherit_alpha: true
+  inherit_alpha: false
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
@@ -141,7 +141,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: 150.0
+    y: 149.0
     z: 0.0
     w: 1.0
   }
@@ -158,20 +158,20 @@ nodes {
     w: 1.0
   }
   size {
-    x: 380.0
-    y: 90.0
+    x: 540.0
+    y: 160.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.5019608
-    y: 0.5019608
-    z: 0.5019608
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/MarketSlots3"
   id: "item1Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -179,7 +179,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   parent: "Shop"
   layer: ""
-  inherit_alpha: true
+  inherit_alpha: false
   slice9 {
     x: 0.0
     y: 0.0
@@ -219,15 +219,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Envy QTX6500"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item1Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -282,16 +282,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "Montserrat"
+  font: "bpdots"
   id: "item1Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -322,8 +322,8 @@ nodes {
 }
 nodes {
   position {
-    x: -145.0
-    y: 0.0
+    x: -200.0
+    y: 5.0
     z: 0.0
     w: 1.0
   }
@@ -419,7 +419,7 @@ nodes {
   inherit_alpha: true
   outerBounds: PIEBOUNDS_RECTANGLE
   innerRadius: 0.0
-  perimeterVertices: 50
+  perimeterVertices: 4
   pieFillAngle: 180.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
@@ -454,15 +454,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item1Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -494,7 +494,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: 50.0
+    y: -31.0
     z: 0.0
     w: 1.0
   }
@@ -511,20 +511,20 @@ nodes {
     w: 1.0
   }
   size {
-    x: 380.0
-    y: 90.0
+    x: 540.0
+    y: 160.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.5019608
-    y: 0.5019608
-    z: 0.5019608
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/MarketSlots1"
   id: "item2Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -532,7 +532,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   parent: "Shop"
   layer: ""
-  inherit_alpha: true
+  inherit_alpha: false
   slice9 {
     x: 0.0
     y: 0.0
@@ -572,15 +572,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Item 2"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item2Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -635,16 +635,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "Montserrat"
+  font: "bpdots"
   id: "item2Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -675,8 +675,8 @@ nodes {
 }
 nodes {
   position {
-    x: -145.0
-    y: 0.0
+    x: -200.0
+    y: 5.0
     z: 0.0
     w: 1.0
   }
@@ -706,7 +706,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "main/logo"
+  texture: "marketplace/Item3Purple"
   id: "item2Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -738,30 +738,30 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 90.0
+    z: 0.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: -1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 80.0
-    y: 80.0
+    x: 90.0
+    y: 90.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.2
-    y: 0.2
-    z: 0.2
+    x: 0.4
+    y: 0.4
+    z: 0.4
     w: 1.0
   }
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/Item3Purple"
   id: "item2Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -770,14 +770,14 @@ nodes {
   parent: "item2Image"
   layer: ""
   inherit_alpha: true
-  outerBounds: PIEBOUNDS_ELLIPSE
-  innerRadius: 25.0
-  perimeterVertices: 50
+  outerBounds: PIEBOUNDS_RECTANGLE
+  innerRadius: 0.0
+  perimeterVertices: 4
   pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.72
+  alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -807,15 +807,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item2Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -847,7 +847,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: -50.0
+    y: -211.0
     z: 0.0
     w: 1.0
   }
@@ -864,20 +864,20 @@ nodes {
     w: 1.0
   }
   size {
-    x: 380.0
-    y: 90.0
+    x: 540.0
+    y: 160.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.5019608
-    y: 0.5019608
-    z: 0.5019608
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/MarketSlots2"
   id: "item3Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -885,7 +885,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   parent: "Shop"
   layer: ""
-  inherit_alpha: true
+  inherit_alpha: false
   slice9 {
     x: 0.0
     y: 0.0
@@ -925,15 +925,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Item 3"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item3Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -988,16 +988,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "Montserrat"
+  font: "bpdots"
   id: "item3Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1028,8 +1028,8 @@ nodes {
 }
 nodes {
   position {
-    x: -145.0
-    y: 0.0
+    x: -200.0
+    y: 5.0
     z: 0.0
     w: 1.0
   }
@@ -1059,7 +1059,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "main/logo"
+  texture: "marketplace/Item4Red"
   id: "item3Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1091,30 +1091,30 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 90.0
+    z: 0.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: -1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 80.0
-    y: 80.0
+    x: 90.0
+    y: 90.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.2
-    y: 0.2
-    z: 0.2
+    x: 0.4
+    y: 0.4
+    z: 0.4
     w: 1.0
   }
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/Item4Red"
   id: "item3Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1123,14 +1123,14 @@ nodes {
   parent: "item3Image"
   layer: ""
   inherit_alpha: true
-  outerBounds: PIEBOUNDS_ELLIPSE
-  innerRadius: 25.0
-  perimeterVertices: 50
+  outerBounds: PIEBOUNDS_RECTANGLE
+  innerRadius: 0.0
+  perimeterVertices: 4
   pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.72
+  alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -1160,15 +1160,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item3Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1200,7 +1200,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: -150.0
+    y: -391.0
     z: 0.0
     w: 1.0
   }
@@ -1217,20 +1217,20 @@ nodes {
     w: 1.0
   }
   size {
-    x: 380.0
-    y: 90.0
+    x: 540.0
+    y: 160.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.5019608
-    y: 0.5019608
-    z: 0.5019608
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/MarketSlots4"
   id: "item4Button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1238,7 +1238,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   parent: "Shop"
   layer: ""
-  inherit_alpha: true
+  inherit_alpha: false
   slice9 {
     x: 0.0
     y: 0.0
@@ -1278,15 +1278,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Item 4"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item4Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1341,16 +1341,16 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "Montserrat"
+  font: "bpdots"
   id: "item4Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1381,8 +1381,8 @@ nodes {
 }
 nodes {
   position {
-    x: -145.0
-    y: 0.0
+    x: -200.0
+    y: 5.0
     z: 0.0
     w: 1.0
   }
@@ -1412,7 +1412,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "main/logo"
+  texture: "marketplace/Item2Blue"
   id: "item4Image"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1444,30 +1444,30 @@ nodes {
   rotation {
     x: 0.0
     y: 0.0
-    z: 90.0
+    z: 0.0
     w: 1.0
   }
   scale {
     x: 1.0
-    y: -1.0
+    y: 1.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 80.0
-    y: 80.0
+    x: 90.0
+    y: 90.0
     z: 0.0
     w: 1.0
   }
   color {
-    x: 0.2
-    y: 0.2
-    z: 0.2
+    x: 0.4
+    y: 0.4
+    z: 0.4
     w: 1.0
   }
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "marketplace/Item2Blue"
   id: "item4Pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1476,14 +1476,14 @@ nodes {
   parent: "item4Image"
   layer: ""
   inherit_alpha: true
-  outerBounds: PIEBOUNDS_ELLIPSE
-  innerRadius: 25.0
-  perimeterVertices: 50
+  outerBounds: PIEBOUNDS_RECTANGLE
+  innerRadius: 0.0
+  perimeterVertices: 4
   pieFillAngle: 350.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.72
+  alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
@@ -1513,15 +1513,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "Montserrat"
+  font: "bpdots"
   id: "item4Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1591,7 +1591,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   parent: "Shop"
   layer: ""
-  inherit_alpha: true
+  inherit_alpha: false
   slice9 {
     x: 0.0
     y: 0.0
@@ -1631,9 +1631,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
@@ -1694,15 +1694,15 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.89411765
+    y: 0.6509804
+    z: 0.44705883
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "Montserrat"
+  font: "bpdots"
   id: "upgradePrice1"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

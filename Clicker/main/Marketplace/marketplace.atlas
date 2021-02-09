@@ -1,3 +1,19 @@
+images {
+  image: "/assets/images/marketplace/MarketSlots1.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/marketplace/MarketSlots2.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/marketplace/MarketSlots3.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/marketplace/MarketSlots4.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "Item1Green"
   images {

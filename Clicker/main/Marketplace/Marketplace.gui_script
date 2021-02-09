@@ -17,7 +17,9 @@ function init(self)
 
  	self.item4Price = gui.get_node("item4Price")
  	self.item4Pie = gui.get_node("item4Pie")
- 	self.item4Count = gui.get_node("item4Amount")
+	self.item4Count = gui.get_node("item4Amount")
+
+	gui.set_render_order(14)
 end
 
 function short_number(number)
