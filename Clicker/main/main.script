@@ -23,6 +23,8 @@ go.property("item2InitialOCCost", 30)
 go.property("item3InitialOCCost", 40)
 go.property("item4InitialOCCost", 50)
 
+go.property("OCScaler", 3)
+
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -155,8 +157,6 @@ function on_message(self, message_id, message, sender)
 			msg.post(".", "UpdateBitcoinSpeed")
 		end
 
-
-		
 	end	
 
 	if message_id == hash("addItem4") then
@@ -183,6 +183,24 @@ function on_message(self, message_id, message, sender)
 				msg.post("/UI#Marketplace", "MaxLevelReached")
 			end
 		end
+	end
+
+	if message_id == hash("OCitem1") then
+		if bitcoinCount >= self.item1CurrentOCCost then
+			--remove coins
+			msg.post(".", "addCoin", {coins = -self.item1CurrentCost})
+
+			self.item1Production = new_price(self.item1Production , self.OCScaler)
+		end
+	end
+	if message_id == hash("OCitem2") then
+
+	end
+	if message_id == hash("OCitem3") then
+
+	end
+	if message_id == hash("OCitem4") then
+
 	end
 end
 
