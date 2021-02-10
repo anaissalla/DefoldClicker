@@ -200,6 +200,10 @@ animations {
     image: "/assets/images/marketplace/UpgradePC/Jar_15.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_18.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 5
   flip_horizontal: 0
@@ -217,6 +221,33 @@ animations {
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 2
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "JarBreaking"
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_breaking_1.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_breaking_2.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_breaking_3.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_breaking_4.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_breaking_5.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 30
   flip_horizontal: 0
   flip_vertical: 0
 }
