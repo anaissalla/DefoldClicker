@@ -200,6 +200,10 @@ animations {
     image: "/assets/images/marketplace/UpgradePC/Jar_15.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_18.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 5
   flip_horizontal: 0
