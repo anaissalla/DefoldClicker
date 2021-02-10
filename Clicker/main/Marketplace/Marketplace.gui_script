@@ -54,13 +54,12 @@ function init(self)
 	self.item3Production = 0
 	self.item4Production = 0
 
-<<<<<<< HEAD
+
 	self.currentJar = 0
 	self.jarFrames = 17
-=======
+
 	self.color = {red = vmath.vector4(0.9,0,0,1), green = vmath.vector4(0,0.9,0,1)}
 	
->>>>>>> 2e88ae526cb6a28ecdc89867c1d37f739e8a2319
 end
 
 function short_number(number) 
@@ -87,7 +86,6 @@ function is_over(node, pos)
  	end
 end
 
-<<<<<<< HEAD
 function calculateJarFrame(self, progress, framePortion)
 	if(progress > framePortion) then
 		print(framePortion)
@@ -99,10 +97,10 @@ function calculateJarFrame(self, progress, framePortion)
 			offset = framePortion,
 			playback_rate = 0
 		}
-		gui.play_flipbook(jar, "Jar", play_properties)
+		gui.play_flipbook(jar, "Jar", nil, play_properties)
 	end
 end
-=======
+
 function update( self, dt )
 	--Update Upgrade Availability
 	if(bitcoinCount >= self.upgrade1Cost) then
@@ -126,10 +124,6 @@ function update( self, dt )
 		gui.play_flipbook(self.item4OC, "Overclock_unavailable4")
 	end
 end
-
-
-
->>>>>>> 2e88ae526cb6a28ecdc89867c1d37f739e8a2319
 
 function on_message(self, message_id, message, sender)
 	--update upgrade info
