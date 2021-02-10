@@ -583,7 +583,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "3dfx Vodoo7"
+  text: "3DFX Vodoo7"
   font: "bpdots25"
   id: "item2Name"
   xanchor: XANCHOR_NONE
@@ -936,7 +936,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Item 3"
+  text: "AMF 280XT"
   font: "bpdots25"
   id: "item3Name"
   xanchor: XANCHOR_NONE
@@ -1171,7 +1171,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Price"
+  text: "Price $"
   font: "bpdots35"
   id: "item3Price"
   xanchor: XANCHOR_NONE
@@ -2056,7 +2056,7 @@ nodes {
   id: "HoverOC"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_SE
   adjust_mode: ADJUST_MODE_FIT
   layer: ""
   inherit_alpha: true
@@ -2075,8 +2075,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 30.0
+    x: -150.0
+    y: 115.0
     z: 0.0
     w: 1.0
   }
@@ -2138,8 +2138,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: -27.0
+    x: -150.0
+    y: 58.0
     z: 0.0
     w: 1.0
   }

@@ -53,6 +53,8 @@ function init(self)
 	self.item2Production = 0
 	self.item3Production = 0
 	self.item4Production = 0
+
+	self.color = {red = vmath.vector4(0.9,0,0,1), green = vmath.vector4(0,0.9,0,1)}
 	
 end
 
@@ -84,13 +86,22 @@ end
 
 
 function on_message(self, message_id, message, sender)
-	--Upgate hover info
+	--update upgrade info
+	if message_id == hash("UpdateUpgrade") then
+		self.upgrade1Cost = message.item1
+		self.upgrade2Cost = message.item2
+		self.upgrade3Cost = message.item3
+		self.upgrade4Cost = message.item4
+
+	end
+	--Upgate hover market info
 	if message_id == hash("UpdateInfo") then
 		
 		self.item1Production = message.item1Production
 		self.item2Production = message.item2Production
 		self.item3Production = message.item3Production
 		self.item4Production = message.item4Production
+
 	end
 	--update amount and price
 	if message_id == hash("Updateitem1") then
@@ -115,31 +126,31 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("UpdateAvailability") then
 
 		if message.item1 >= 1 then
-			gui.set_color(self.item1Price, vmath.vector4(0,0.9,0,1))--green
+			gui.set_color(self.item1Price, self.color.green)--green
 			gui.set_fill_angle(self.item1Pie, 0)
 		else
-			gui.set_color(self.item1Price, vmath.vector4(0.9,0,0,1))--red
+			gui.set_color(self.item1Price, self.color.red)--red
 			gui.set_fill_angle(self.item1Pie, 360 - message.item1 * 360)
 		end
 		if message.item2 >= 1 then
-			gui.set_color(self.item2Price, vmath.vector4(0,0.9,0,1))--green
+			gui.set_color(self.item2Price, self.color.green)--green
 			gui.set_fill_angle(self.item2Pie, 0)
 		else
-			gui.set_color(self.item2Price, vmath.vector4(0.9,0,0,1))--red
+			gui.set_color(self.item2Price, self.color.red)--red
 			gui.set_fill_angle(self.item2Pie, 360 - message.item2 * 360)
 		end
 		if message.item3 >= 1 then
-			gui.set_color(self.item3Price, vmath.vector4(0,0.9,0,1))--green
+			gui.set_color(self.item3Price, self.color.green)--green
 			gui.set_fill_angle(self.item3Pie, 0)
 		else
-			gui.set_color(self.item3Price, vmath.vector4(0.9,0,0,1))--red
+			gui.set_color(self.item3Price, self.color.red)--red
 			gui.set_fill_angle(self.item3Pie, 360 - message.item3 * 360)
 		end
 		if message.item4 >= 1 then
-			gui.set_color(self.item4Price, vmath.vector4(0,0.9,0,1))--green
+			gui.set_color(self.item4Price, self.color.green)--green
 			gui.set_fill_angle(self.item4Pie, 0)
 		else
-			gui.set_color(self.item4Price, vmath.vector4(0.9,0,0,1))--red
+			gui.set_color(self.item4Price,self.color.red)--red
 			gui.set_fill_angle(self.item4Pie, 360 - message.item4 * 360)
 		end
 	end
@@ -192,16 +203,70 @@ function hoverButtonText( self, pos)
 	end
 
 	if self.isOverItem1OC then
-
+		if not gui.is_enabled(self.hoverOC) then
+			gui.set_enabled(self.hoverOC, true)
+			gui.set_text(gui.get_node("HOCTitle"), "Overclock")
+			local textNode = gui.get_node("HOCInfo")
+			print(self.upgrade1Cost .. " " .. bitcoinCount)
+			if bitcoinCount >= self.upgrade1Cost then
+				gui.set_color(textNode, self.color.green)
+			else
+				gui.set_color(textNode, self.color.red)
+			end
+			gui.set_text(textNode, self.upgrade1Cost .. " $")
+		end 
+		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 	elseif self.isOverItem2OC then
-
+		if not gui.is_enabled(self.hoverOC) then
+			gui.set_enabled(self.hoverOC, true)
+			gui.set_text(gui.get_node("HOCTitle"), "Overclock")
+			local textNode = gui.get_node("HOCInfo")
+			
+			if bitcoinCount >= self.upgrade2Cost then
+				gui.set_color(textNode, self.color.green)
+			else
+				gui.set_color(textNode, self.color.red)
+			end
+			gui.set_text(textNode, self.upgrade2Cost .. " $")
+		end 
+		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 	elseif self.isOverItem3OC then
+		if not gui.is_enabled(self.hoverOC) then
+			gui.set_enabled(self.hoverOC, true)
+			gui.set_text(gui.get_node("HOCTitle"), "Overclock")
+			local textNode = gui.get_node("HOCInfo")
 
+			if bitcoinCount >= self.upgrade3Cost then
+				gui.set_color(textNode, self.color.green)
+			else
+				gui.set_color(textNode, self.color.red)
+			end
+			gui.set_text(textNode, self.upgrade3Cost .. " $")
+		end 
+		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 	elseif self.isOverItem4OC then
+		if not gui.is_enabled(self.hoverOC) then
+			gui.set_enabled(self.hoverOC, true)
+			gui.set_text(gui.get_node("HOCTitle"), "Overclock")
+			local textNode = gui.get_node("HOCInfo")
 
+			if bitcoinCount >= self.upgrade4Cost then
+				gui.set_color(textNode, self.color.green)
+			else
+				gui.set_color(textNode, self.color.red)
+			end
+			gui.set_text(textNode, self.upgrade4Cost .. " $")
+		end 
+		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 	else
-
+		gui.set_enabled(self.hoverOC, false)
 	end
+
+
+
+	
+	
+	
 end
 
 function on_input(self, action_id, action)
