@@ -246,8 +246,8 @@ animations {
     image: "/assets/images/marketplace/UpgradePC/Jar_breaking_5.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 30
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 2
   flip_horizontal: 0
   flip_vertical: 0
 }

@@ -76,13 +76,14 @@ function update(self, dt)
 	local item3Available = bitcoinCount / self.item3CurrentCost
 	local item4Available = bitcoinCount / self.item4CurrentCost
 
-	local upgradeProgress = 1 / (self.clickUpgradeCurrentCost / bitcoinCount)
-	msg.post("/UI#Marketplace","UpdatePCUpgrade", {progress = upgradeProgress})
+	if self.PClevel < 4 then
+		local upgradeProgress = 1 / (self.clickUpgradeCurrentCost / bitcoinCount)
+		msg.post("/UI#Marketplace","UpdatePCUpgrade", {progress = upgradeProgress})
+	end
+	
 	msg.post("/UI#Marketplace", "UpdateAvailability", {item1 = item1Available, item2 = item2Available, item3 = item3Available, item4 = item4Available})
 
 	msg.post("/UI#Marketplace", "UpdateInfo", {item1Production = self.item1Production, item2Production = self.item2Production, item3Production = self.item3Production, item4Production = self.item4Production})
-
-
 end
 
 local function new_price(current_price, scaler)
@@ -165,18 +166,17 @@ function on_message(self, message_id, message, sender)
 	end
 
 	if message_id == hash("upgradeClick") then
-		if self.PClevel < 5 then
-			if bitcoinCount >= self.clickUpgradeCurrentCost then
+		if (self.PClevel < 4) and (bitcoinCount >= self.clickUpgradeCurrentCost) then
 				self.PClevel = self.PClevel + 1
-			
 				msg.post(".", "addCoins", {coins = -self.clickUpgradeCurrentCost})
-
+				
 				self.clickUpgradeCurrentCost = new_price(self.clickUpgradeCurrentCost, self.clickUpgradeCostScaler)
 				msg.post("/UI#ClickButton", "upgradeClickSprite")
-
-				--Change button name to max lvl
-				msg.post("/UI#Marketplace", "MaxLevelReached")
-			end
+				
+				if self.PClevel == 4 then
+					--Change button name to max lvl
+					msg.post("/UI#Marketplace", "MaxLevelReached")
+				end
 		end
 	end
 

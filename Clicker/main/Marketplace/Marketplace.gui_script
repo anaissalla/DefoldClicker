@@ -100,6 +100,11 @@ function calculateJarFrame(self, progress, framePortion)
 	end
 end
 
+function disableJar(self)
+	local jar = gui.get_node("upgradeButton")
+	gui.set_enabled(jar, false)
+end
+
 function update( self, dt )
 	--Update Upgrade Availability
 	if(bitcoinCount >= self.upgrade1Cost) then
@@ -140,7 +145,6 @@ function on_message(self, message_id, message, sender)
 		self.item2Production = message.item2Production
 		self.item3Production = message.item3Production
 		self.item4Production = message.item4Production
-
 	end
 	--update amount and price
 	if message_id == hash("Updateitem1") then
@@ -178,7 +182,6 @@ function on_message(self, message_id, message, sender)
 		if self.upgradeAvailable == false then
 			calculateJarFrame(self, message.progress, 0)
 		end
-		
 	end
 	--update Availability
 	if message_id == hash("UpdateAvailability") then
@@ -211,6 +214,12 @@ function on_message(self, message_id, message, sender)
 			gui.set_color(self.item4Price,self.color.red)--red
 			gui.set_fill_angle(self.item4Pie, 360 - message.item4 * 360)
 		end
+	end
+
+	if message_id == hash("MaxLevelReached") then
+		local jar = gui.get_node("upgradeButton")
+		gui.play_flipbook(jar, "JarBreaking")
+		--timer.delay(4, false, disableJar)
 	end
 end
 
