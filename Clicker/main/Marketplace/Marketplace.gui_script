@@ -53,7 +53,9 @@ function init(self)
 	self.item2Production = 0
 	self.item3Production = 0
 	self.item4Production = 0
-	
+
+	self.currentJar = 0
+	self.jarFrames = 17
 end
 
 function short_number(number) 
@@ -80,8 +82,20 @@ function is_over(node, pos)
  	end
 end
 
-
-
+function calculateJarFrame(self, progress, framePortion)
+	if(progress > framePortion) then
+		print(framePortion)
+		self.currentJar = framePortion + (1/self.jarFrames)
+		calculateJarFrame(self, progress, self.currentJar)
+	elseif (progress <= framePortion) then
+		local jar = gui.get_node("upgradeButton")
+		local  play_properties = {
+			offset = framePortion,
+			playback_rate = 0
+		}
+		gui.play_flipbook(jar, "Jar", play_properties)
+	end
+end
 
 function on_message(self, message_id, message, sender)
 	--Upgate hover info
@@ -111,6 +125,11 @@ function on_message(self, message_id, message, sender)
 		gui.set_text(self.item4Price, short_number(message.price))
 	end
 
+	if message_id == hash("UpdateUpgrade") then
+		--set flipbook jar
+		local jar = gui.get_node("upgradeButton")
+		calculateJarFrame(self, message.progress, self.currentJar)
+	end
 	--update Availability
 	if message_id == hash("UpdateAvailability") then
 

@@ -15,53 +15,53 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock1.png"
+  image: "/assets/images/marketplace/OC/Overclock1.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock2.png"
+  image: "/assets/images/marketplace/OC/Overclock2.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock3.png"
+  image: "/assets/images/marketplace/OC/Overclock3.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock4.png"
+  image: "/assets/images/marketplace/OC/Overclock4.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock_unavailable1.png"
+  image: "/assets/images/marketplace/OC/Overclock_unavailable1.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock_unavailable2.png"
+  image: "/assets/images/marketplace/OC/Overclock_unavailable2.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock_unavailable3.png"
+  image: "/assets/images/marketplace/OC/Overclock_unavailable3.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/marketplace/Overclock_unavailable4.png"
+  image: "/assets/images/marketplace/OC/Overclock_unavailable4.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {
   id: "Item1Green"
   images {
-    image: "/assets/images/marketplace/item1/item1_frame1.png"
+    image: "/assets/images/marketplace/Items/item1_frame1.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item1_frame2.png"
+    image: "/assets/images/marketplace/Items/item1_frame2.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item1_frame3.png"
+    image: "/assets/images/marketplace/Items/item1_frame3.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item1_frame4.png"
+    image: "/assets/images/marketplace/Items/item1_frame4.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -72,19 +72,19 @@ animations {
 animations {
   id: "Item2Blue"
   images {
-    image: "/assets/images/marketplace/item1/item2_frame1.png"
+    image: "/assets/images/marketplace/Items/item2_frame1.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item2_frame2.png"
+    image: "/assets/images/marketplace/Items/item2_frame2.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item2_frame3.png"
+    image: "/assets/images/marketplace/Items/item2_frame3.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item2_frame4.png"
+    image: "/assets/images/marketplace/Items/item2_frame4.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -95,19 +95,19 @@ animations {
 animations {
   id: "Item3Purple"
   images {
-    image: "/assets/images/marketplace/item1/item3_frame1.png"
+    image: "/assets/images/marketplace/Items/item3_frame1.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item3_frame2.png"
+    image: "/assets/images/marketplace/Items/item3_frame2.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item3_frame3.png"
+    image: "/assets/images/marketplace/Items/item3_frame3.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item3_frame4.png"
+    image: "/assets/images/marketplace/Items/item3_frame4.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -118,23 +118,113 @@ animations {
 animations {
   id: "Item4Red"
   images {
-    image: "/assets/images/marketplace/item1/item4_frame1.png"
+    image: "/assets/images/marketplace/Items/item4_frame1.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item4_frame2.png"
+    image: "/assets/images/marketplace/Items/item4_frame2.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item4_frame3.png"
+    image: "/assets/images/marketplace/Items/item4_frame3.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/marketplace/item1/item4_frame4.png"
+    image: "/assets/images/marketplace/Items/item4_frame4.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 12
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "Jar"
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_01.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_02.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_03.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_04.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_05.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_06.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_07.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_08.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_09.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_10.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_11.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_12.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_13.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_14.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_15.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_16.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_17.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_NONE
+  fps: 5
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "JarAvailable"
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_18.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/assets/images/marketplace/UpgradePC/Jar_19.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 2
   flip_horizontal: 0
   flip_vertical: 0
 }
