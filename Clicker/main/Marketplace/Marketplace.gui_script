@@ -162,7 +162,7 @@ function on_message(self, message_id, message, sender)
 		gui.set_text(self.item4Price, short_number(message.price))
 	end
 
-	if message_id == hash("UpdateUpgrade") then
+	if message_id == hash("UpdatePCUpgrade") then
 		--set flipbook jar
 		local jar = gui.get_node("upgradeButton")
 		calculateJarFrame(self, message.progress, self.currentJar)
@@ -201,7 +201,7 @@ function on_message(self, message_id, message, sender)
 	end
 end
 
-function hoverButtonText( self, pos)
+function hoverButtonText(self, pos)
 	if self.isOverItem1Buy then
 		if not gui.is_enabled(self.hoverMarket) then
 			gui.set_enabled(self.hoverMarket, true)
