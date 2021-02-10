@@ -55,7 +55,9 @@ function init(self)
 	self.item4Production = 0
 
 	self.color = {red = vmath.vector4(0.9,0,0,1), green = vmath.vector4(0,0.9,0,1)}
-	
+
+	self.currentJar = 0
+	self.jarFrames = 17
 end
 
 function short_number(number) 
@@ -82,44 +84,18 @@ function is_over(node, pos)
  	end
 end
 
-function calculateJarFrame(self, progress)
-	local  play_properties = {
-		offset = 0,
-		playback_rate = 0
-	}
-	if(progress < 1/5) then
-		play_properties = {
-			offset = 0,
+function calculateJarFrame(self, progress, framePortion)
+	if(progress > framePortion) then
+		self.currentJar = framePortion + (1/self.jarFrames)
+		calculateJarFrame(self, progress, self.currentJar)
+	elseif (progress <= framePortion) then
+		local jar = gui.get_node("upgradeButton")
+		local  play_properties = {
+			offset = framePortion - 1/self.jarFrames,
 			playback_rate = 0
 		}
-	elseif (progress >= 1/5 and progress < 2/5) then
-		play_properties = {
-			offset = 0.2,
-			playback_rate = 0
-		}
-	elseif (progress >= 2/5 and progress < 3/5) then
-		play_properties = {
-			offset = 0.4,
-			playback_rate = 0
-		}
-	elseif (progress >= 3/5 and progress < 4/5) then
-		play_properties = {
-			offset = 0.6,
-			playback_rate = 0
-		}
-	elseif (progress >= 4/5 and progress < 5/5) then
-		play_properties = {
-			offset = 0.8,
-			playback_rate = 0
-		}
-	elseif (progress == 1) then
-		play_properties = {
-			offset = 1,
-			playback_rate = 0
-		}
+		gui.play_flipbook(jar, "Jar", nil, play_properties)
 	end
-	local jar = gui.get_node("upgradeButton")
-	gui.play_flipbook(jar, "Jar" ,nil , play_properties)
 end
 
 function update( self, dt )
@@ -186,7 +162,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("UpdatePCUpgrade") then
 		--set flipbook jar
 		local jar = gui.get_node("upgradeButton")
-		calculateJarFrame(self, message.progress)
+		calculateJarFrame(self, message.progress, 0)
 	end
 	--update Availability
 	if message_id == hash("UpdateAvailability") then
