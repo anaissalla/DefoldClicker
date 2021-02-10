@@ -130,6 +130,7 @@ function on_input(self, action_id, action)
 			end
 			
 			animate_computer(self)
+			msg.post("/soundManager#soundManager", "playKey")
 			--gui.set_size(self.clickButtonSprite, vmath.vector3(180, 180, 0))
 			--timer.delay(0.1, false, resetSpriteSize)
 		end
