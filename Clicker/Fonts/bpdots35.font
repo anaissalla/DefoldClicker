@@ -1,6 +1,6 @@
-font: "/Fonts/bpdots.squares-bold.otf"
+font: "/Fonts/BitcoinMiner.ttf"
 material: "/builtins/fonts/font.material"
-size: 35
+size: 42
 antialias: 1
 alpha: 1.0
 outline_alpha: 0.0

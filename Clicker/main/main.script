@@ -53,7 +53,7 @@ function update(self, dt)
 	--fixedUpdate --update a cada segon
 	if self.timer > 1 then
 		self.timer = self.timer - 1
-		
+		msg.post("/UI#Marketplace", "UpdateInfo", {item1Production = self.item1Production, item2Production = self.item2Production, item3Production = self.item3Production, item4Production = self.item4Production})
 			
 
 	end
@@ -63,7 +63,7 @@ function update(self, dt)
 	bitcoinCount = bitcoinCount + self.currentProduction * dt
 	msg.post("/UI#Info", "UpdateBitcoinCount", {coins = bitcoinCount})
 
-	--Update Marketplace price color
+	--Update Marketplace "Each Item1 produces " .. short_numbers(production) .. "/s"ce color
 	local item1Available = bitcoinCount / self.item1CurrentCost
 	
 	local item2Available = bitcoinCount / self.item2CurrentCost

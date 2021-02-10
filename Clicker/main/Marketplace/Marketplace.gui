@@ -1,11 +1,15 @@
 script: "/main/Marketplace/Marketplace.gui_script"
 fonts {
-  name: "Montserrat"
-  font: "/Fonts/Montserrat.font"
+  name: "bpdots25"
+  font: "/Fonts/bpdots25.font"
 }
 fonts {
-  name: "bpdots"
-  font: "/Fonts/bpdots.font"
+  name: "bpdots35"
+  font: "/Fonts/bpdots35.font"
+}
+fonts {
+  name: "bpdotTitle"
+  font: "/Fonts/bpdotTitle.font"
 }
 textures {
   name: "main"
@@ -109,7 +113,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Marketplace"
-  font: "bpdots"
+  font: "bpdotTitle"
   id: "Title"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -226,8 +230,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Envy QTX6500"
-  font: "bpdots"
+  text: "Envy X650"
+  font: "bpdots25"
   id: "item1Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -291,7 +295,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "bpdots"
+  font: "bpdots25"
   id: "item1Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -462,7 +466,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "bpdots"
+  font: "bpdots35"
   id: "item1Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -579,8 +583,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Item 2"
-  font: "bpdots"
+  text: "3dfx Vodoo7"
+  font: "bpdots25"
   id: "item2Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -644,7 +648,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "bpdots"
+  font: "bpdots25"
   id: "item2Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -815,7 +819,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "bpdots"
+  font: "bpdots35"
   id: "item2Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -933,7 +937,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Item 3"
-  font: "bpdots"
+  font: "bpdots25"
   id: "item3Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -997,7 +1001,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "bpdots"
+  font: "bpdots25"
   id: "item3Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1168,7 +1172,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "bpdots"
+  font: "bpdots35"
   id: "item3Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1286,7 +1290,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Item 4"
-  font: "bpdots"
+  font: "bpdots25"
   id: "item4Name"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1350,7 +1354,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "0\n"
   ""
-  font: "bpdots"
+  font: "bpdots25"
   id: "item4Amount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1521,7 +1525,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "bpdots"
+  font: "bpdots35"
   id: "item4Price"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1639,7 +1643,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Upgrade PC"
-  font: "bpdots"
+  font: "bpdots25"
   id: "upgradeText"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1702,7 +1706,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "Price"
-  font: "bpdots"
+  font: "bpdots35"
   id: "upgradePrice1"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1986,7 +1990,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Overclock\n"
   ""
-  font: "bpdots"
+  font: "bpdots25"
   id: "Overclock"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -2008,6 +2012,368 @@ nodes {
   parent: "Shop"
   layer: ""
   inherit_alpha: false
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 949.0
+    y: 639.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 300.0
+    y: 150.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.101960786
+    y: 0.101960786
+    z: 0.101960786
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "HoverOC"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_MANUAL
+}
+nodes {
+  position {
+    x: 0.0
+    y: 30.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "OC Upgrade"
+  font: "bpdots25"
+  id: "HOCTitle"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "HoverOC"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 0.0
+    y: -27.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Price  $  "
+  font: "bpdots35"
+  id: "HOCInfo"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "HoverOC"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 1104.0
+    y: 507.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 500.0
+    y: 200.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 0.101960786
+    y: 0.101960786
+    z: 0.101960786
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: ""
+  id: "HoverMarket"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_NE
+  adjust_mode: ADJUST_MODE_FIT
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_MANUAL
+}
+nodes {
+  position {
+    x: -488.0
+    y: -34.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Item Info\n"
+  ""
+  font: "bpdots25"
+  id: "HMTitle"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_W
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  parent: "HoverMarket"
+  layer: ""
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 1.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: -486.0
+    y: -70.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 470.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Price\n"
+  ""
+  font: "bpdots35"
+  id: "HMInfo"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_NW
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: true
+  parent: "HoverMarket"
+  layer: ""
+  inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0

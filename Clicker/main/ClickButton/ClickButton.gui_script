@@ -19,7 +19,7 @@ function init(self)
 	gui.set_enabled(Leds, false)
 	gui.set_enabled(Coffee, false)
 
-	gui.set_render_order(15)
+	gui.set_render_order(14)
 	
 end
 

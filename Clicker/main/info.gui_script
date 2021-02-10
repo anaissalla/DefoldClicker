@@ -8,7 +8,7 @@ end
 
 function short_number(number) -- ha d'haber un per coins i un altre per speed
 	local shorted_number
-	print(number)
+	--print(number)
 	if number < 10^3  then
 		shorted_number = string.format("%.1f", number)
 	elseif number < 10^6 then 

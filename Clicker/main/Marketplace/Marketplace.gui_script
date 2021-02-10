@@ -3,6 +3,8 @@
 function init(self)
 	msg.post(".","acquire_input_focus")
 	
+	gui.set_render_order(15)
+
  	self.item1Price = gui.get_node("item1Price")
  	self.item1Pie = gui.get_node("item1Pie")
  	self.item1Count = gui.get_node("item1Amount")
@@ -19,26 +21,77 @@ function init(self)
  	self.item4Pie = gui.get_node("item4Pie")
 	self.item4Count = gui.get_node("item4Amount")
 
-	gui.set_render_order(14)
+	self.upgradeButton = gui.get_node("upgradeButton")
+	self.item1Button = gui.get_node("item1Button")
+	self.item2Button = gui.get_node("item2Button")
+	self.item3Button = gui.get_node("item3Button")
+	self.item4Button = gui.get_node("item4Button")
+	self.item1OC = gui.get_node("OCButton1")
+	self.item2OC = gui.get_node("OCButton2")
+	self.item3OC = gui.get_node("OCButton3")
+	self.item4OC = gui.get_node("OCButton4")
+
+
+	self.isOverItem1OC = false
+	self.isOverItem2OC = false
+	self.isOverItem3OC = false
+	self.isOverItem4OC = false
+
+	self.isOverItem1Buy = false
+	self.isOverItem2Buy = false
+	self.isOverItem3Buy = false
+	self.isOverItem4Buy = false
+
+	self.hoverMarket = gui.get_node("HoverMarket")
+	self.hoverOC = gui.get_node("HoverOC")
+
+
+	gui.set_enabled(self.hoverOC, false)
+	gui.set_enabled(self.hoverMarket, false)
+
+	self.item1Production = 0
+	self.item2Production = 0
+	self.item3Production = 0
+	self.item4Production = 0
+	
 end
 
 function short_number(number) 
 	local shorted_number
 	if number < 10^3  then
-		shorted_number = string.format("%.1f", number)
+		shorted_number = (string.format("%.1f", number) .. " $")
 	elseif number < 10^6 then 
-		shorted_number = string.format("%.f", number)
+		shorted_number = (string.format("%.f", number) .. " $")
 	elseif number < 10^9 then
 		number = number / 10^6
-		shorted_number = string.format("%3.3f", number) .. "M"
+		shorted_number = (string.format("%3.3f", number) .. "M $")
 	elseif number < 10^12 then
 		number = number / 10^9
-		shorted_number = string.format("%3.3f", number) .. "B"
+		shorted_number = (string.format("%3.3f", number) .. "B $")
 	end
 	return shorted_number
 end
 
+function is_over(node, pos)
+	if gui.pick_node(node, pos.x, pos.y) then 
+      	return true
+    else
+      	return false
+ 	end
+end
+
+
+
+
 function on_message(self, message_id, message, sender)
+	--Upgate hover info
+	if message_id == hash("UpdateInfo") then
+		
+		self.item1Production = message.item1Production
+		self.item2Production = message.item2Production
+		self.item3Production = message.item3Production
+		self.item4Production = message.item4Production
+	end
 	--update amount and price
 	if message_id == hash("Updateitem1") then
 		gui.set_text(self.item1Count, message.count)
@@ -90,41 +143,108 @@ function on_message(self, message_id, message, sender)
 			gui.set_fill_angle(self.item4Pie, 360 - message.item4 * 360)
 		end
 	end
+end
 
+function hoverButtonText( self, pos)
+	if self.isOverItem1Buy then
+		if not gui.is_enabled(self.hoverMarket) then
+			gui.set_enabled(self.hoverMarket, true)
+			gui.set_text(gui.get_node("HMTitle"), "Envy X650")
+			local text1 = "Each Envy X650 produces " .. short_number(self.item1Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item1Count) .. " Envy X650 for a total of " .. short_number(self.item1Production * gui.get_text(self.item1Count)) .. "/s"
+			local text = text1 .. "\n" .. text2
+			gui.set_text(gui.get_node("HMInfo"), text )
+		end
+		gui.set_position(self.hoverMarket, vmath.vector3(pos.x, pos.y, 0))
+	elseif self.isOverItem2Buy then
+		if not gui.is_enabled(self.hoverMarket) then
+			gui.set_enabled(self.hoverMarket, true)
+			gui.set_text(gui.get_node("HMTitle"), "3DFX Vodoo7")
+			local text1 = "Each Vodoo7 produces " .. short_number(self.item2Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item2Count) .. " Vodoo7 for a total of " .. short_number(self.item2Production * gui.get_text(self.item2Count)) .. "/s"
+			local text = text1 .. "\n" .. text2
+			gui.set_text(gui.get_node("HMInfo"), text )
+		end
+		gui.set_position(self.hoverMarket, vmath.vector3(pos.x, pos.y, 0))
+
+	elseif self.isOverItem3Buy then
+		if not gui.is_enabled(self.hoverMarket) then
+			gui.set_enabled(self.hoverMarket, true)
+			gui.set_text(gui.get_node("HMTitle"), "AMF 280XT")
+			local text1 = "Each AMF 280XT produces " .. short_number(self.item3Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item3Count) .. " AMF 280XT for a total of " .. short_number(self.item3Production * gui.get_text(self.item3Count)) .. "/s"
+			local text = text1 .. "\n" .. text2
+			gui.set_text(gui.get_node("HMInfo"), text )
+		end
+		gui.set_position(self.hoverMarket, vmath.vector3(pos.x, pos.y, 0))
+	elseif self.isOverItem4Buy then
+		if not gui.is_enabled(self.hoverMarket) then
+			gui.set_enabled(self.hoverMarket, true)
+			gui.set_text(gui.get_node("HMTitle"), "Item4")
+			local text1 = "Each Item4 produces " .. short_number(self.item4Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item4Count) .. " Item4 for a total of " .. short_number(self.item4Production * gui.get_text(self.item4Count)) .. "/s"
+			local text = text1 .. "\n" .. text2
+			gui.set_text(gui.get_node("HMInfo"), text )
+		end
+		gui.set_position(self.hoverMarket, vmath.vector3(pos.x, pos.y, 0))
+	else
+		gui.set_enabled(self.hoverMarket, false)
+	end
+
+	if self.isOverItem1OC then
+
+	elseif self.isOverItem2OC then
+
+	elseif self.isOverItem3OC then
+
+	elseif self.isOverItem4OC then
+
+	else
+
+	end
 end
 
 function on_input(self, action_id, action)
 	if action_id == hash("LEFT_CLICK") and action.released then
-		local item1Button = gui.get_node("item1Button")
-		local item2Button = gui.get_node("item2Button")
-		local item3Button = gui.get_node("item3Button")
-		local item4Button = gui.get_node("item4Button")
 		
-		local upgradeButton = gui.get_node("upgradeButton")
-
 		--item1 button
-		if gui.pick_node(item1Button, action.x, action.y) then
+		if gui.pick_node(self.item1Button, action.x, action.y) then
 			msg.post("/Main#main", "addItem1")
 		end
 
 		--item2 button
-		if gui.pick_node(item2Button, action.x, action.y) then
+		if gui.pick_node(self.item2Button, action.x, action.y) then
 			msg.post("/Main#main", "addItem2")
 		end
 
 		--item3 button
-		if gui.pick_node(item3Button, action.x, action.y) then
+		if gui.pick_node(self.item3Button, action.x, action.y) then
 			msg.post("/Main#main", "addItem3")
 		end
 
 		--item4 button
-		if gui.pick_node(item4Button, action.x, action.y) then
+		if gui.pick_node(self.item4Button, action.x, action.y) then
 			msg.post("/Main#main", "addItem4")	
 		end
 			
-		if gui.pick_node(upgradeButton, action.x, action.y) then
+		if gui.pick_node(self.upgradeButton, action.x, action.y) then
 			msg.post("/Main#main", "upgradeClick")
 		end
 	end	
+	if action_id == nil then 
+		self.isOverItem1Buy = is_over(self.item1Button, action)
+		self.isOverItem2Buy = is_over(self.item2Button, action)
+		self.isOverItem3Buy = is_over(self.item3Button, action)
+		self.isOverItem4Buy = is_over(self.item4Button, action)
+		self.isOverItem1OC = is_over(self.item1OC, action)
+		self.isOverItem2OC = is_over(self.item2OC, action)
+		self.isOverItem3OC = is_over(self.item3OC, action)
+		self.isOverItem4OC = is_over(self.item4OC, action)
+
+		hoverButtonText(self, action)
+
+	end
 end
+
+
 
