@@ -274,6 +274,7 @@ function hoverButtonText(self, pos)
 			gui.set_text(textNode, self.upgrade1Cost .. " $")
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
+
 	elseif self.isOverItem2OC then
 		if not gui.is_enabled(self.hoverOC) then
 			gui.set_enabled(self.hoverOC, true)
@@ -288,6 +289,7 @@ function hoverButtonText(self, pos)
 			gui.set_text(textNode, self.upgrade2Cost .. " $")
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
+
 	elseif self.isOverItem3OC then
 		if not gui.is_enabled(self.hoverOC) then
 			gui.set_enabled(self.hoverOC, true)
@@ -302,6 +304,7 @@ function hoverButtonText(self, pos)
 			gui.set_text(textNode, self.upgrade3Cost .. " $")
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
+
 	elseif self.isOverItem4OC then
 		if not gui.is_enabled(self.hoverOC) then
 			gui.set_enabled(self.hoverOC, true)
@@ -319,6 +322,10 @@ function hoverButtonText(self, pos)
 	else
 		gui.set_enabled(self.hoverOC, false)
 	end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7474402e68579cfe827e05524074de6c3e22a2b5
 end
 
 function on_input(self, action_id, action)
@@ -343,9 +350,30 @@ function on_input(self, action_id, action)
 		if gui.pick_node(self.item4Button, action.x, action.y) then
 			msg.post("/Main#main", "addItem4")	
 		end
-			
+		
+		--Upgrade PC
 		if gui.pick_node(self.upgradeButton, action.x, action.y) then
 			msg.post("/Main#main", "upgradeClick")
+		end
+
+		--OC item1
+		if gui.pick_node(self.item1OC, action.x, action.y) then
+			msg.post("/Main#main", "OCitem1")
+		end
+
+		--OC item2
+		if gui.pick_node(self.item2OC, action.x, action.y) then
+			msg.post("/Main#main", "OCitem2")
+		end
+
+		--OC item3
+		if gui.pick_node(self.item3OC, action.x, action.y) then
+			msg.post("/Main#main", "OCitem3")
+		end
+
+		--OC item4
+		if gui.pick_node(self.item4OC, action.x, action.y) then
+			msg.post("/Main#main", "OCitem4")
 		end
 	end	
 	if action_id == nil then 
