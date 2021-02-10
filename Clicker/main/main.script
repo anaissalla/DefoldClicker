@@ -82,6 +82,8 @@ function update(self, dt)
 	local item3Available = bitcoinCount / self.item3CurrentCost
 	local item4Available = bitcoinCount / self.item4CurrentCost
 
+	local upgradeProgress = 1 / (self.clickUpgradeCurrentCost / bitcoinCount)
+	msg.post("/UI#Marketplace","UpdatePCUpgrade", {progress = upgradeProgress})
 	msg.post("/UI#Marketplace", "UpdateAvailability", {item1 = item1Available, item2 = item2Available, item3 = item3Available, item4 = item4Available})
 
 	msg.post("/UI#Marketplace", "UpdateInfo", {item1Production = self.item1Production, item2Production = self.item2Production, item3Production = self.item3Production, item4Production = self.item4Production})
