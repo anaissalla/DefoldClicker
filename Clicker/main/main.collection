@@ -59,7 +59,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"clickUpgradeInitialCost\"\n"
-  "    value: \"50.0\"\n"
+  "    value: \"1.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "}\n"
