@@ -322,6 +322,10 @@ function hoverButtonText(self, pos)
 	else
 		gui.set_enabled(self.hoverOC, false)
 	end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 394986db2375ce0fe336e1fed21d00f7ab8c9a79
 end
 
 function on_input(self, action_id, action)
