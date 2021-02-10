@@ -190,17 +190,44 @@ function on_message(self, message_id, message, sender)
 			--remove coins
 			msg.post(".", "addCoin", {coins = -self.item1CurrentCost})
 
+			--Upgrade production
 			self.item1Production = new_price(self.item1Production , self.OCScaler)
+
+			--Update production speed
+			msg.post(".", "UpdateBitcoinSpeed")
+
+			--Update Upgrade costScaler
+			self.item1CurrentOCCost = new_price(self.item1CurrentOCCost, self.clickUpgradeCostScaler)
+
+			--Update marketplace info
+			msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
+
+			--Update Hover info
+			
 		end
 	end
 	if message_id == hash("OCitem2") then
-
+		msg.post(".", "addCoin", {coins = -self.item2CurrentCost})
+		self.item2Production = new_price(self.item2Production , self.OCScaler)
+		msg.post(".", "UpdateBitcoinSpeed")
+		self.item2CurrentOCCost = new_price(self.item2CurrentOCCost, self.clickUpgradeCostScaler)
+		msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
 	end
 	if message_id == hash("OCitem3") then
-
+		msg.post(".", "addCoin", {coins = -self.item3CurrentCost})
+		self.item3Production = new_price(self.item3Production , self.OCScaler)
+		msg.post(".", "UpdateBitcoinSpeed")
+		self.item3CurrentOCCost = new_price(self.item3CurrentOCCost, self.clickUpgradeCostScaler)
+		msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
+		
 	end
 	if message_id == hash("OCitem4") then
-
+		msg.post(".", "addCoin", {coins = -self.item4CurrentCost})
+		self.item4Production = new_price(self.item4Production , self.OCScaler)
+		msg.post(".", "UpdateBitcoinSpeed")
+		self.item4CurrentOCCost = new_price(self.item4CurrentOCCost, self.clickUpgradeCostScaler)
+		msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
+		
 	end
 end
 

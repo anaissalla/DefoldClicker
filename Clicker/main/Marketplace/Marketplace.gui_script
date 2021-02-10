@@ -62,10 +62,10 @@ function init(self)
 	self.jarAvailablePlaying = false
 end
 
-function short_number(number) 
+function short_numbers(number) 
 	local shorted_number
 	if number < 10^3  then
-		shorted_number = (string.format("%.1f", number) .. " $")
+		shorted_number = (string.format("%.f", number) .. " $")
 	elseif number < 10^6 then 
 		shorted_number = (string.format("%.f", number) .. " $")
 	elseif number < 10^9 then
@@ -145,20 +145,20 @@ function on_message(self, message_id, message, sender)
 	--update amount and price
 	if message_id == hash("Updateitem1") then
 		gui.set_text(self.item1Count, message.count)
-		gui.set_text(self.item1Price, short_number(message.price))
+		gui.set_text(self.item1Price, short_numbers(message.price))
 	end	
 	if message_id == hash("Updateitem2") then
 		gui.set_text(self.item2Count, message.count)
-		gui.set_text(self.item2Price, short_number(message.price))
+		gui.set_text(self.item2Price, short_numbers(message.price))
 	end
 	if message_id == hash("Updateitem3") then
 		gui.set_text(self.item3Count, message.count)
-		gui.set_text(self.item3Price, short_number(message.price))
+		gui.set_text(self.item3Price, short_numbers(message.price))
 	end
 	if message_id == hash("Updateitem4") then
 		
 		gui.set_text(self.item4Count, message.count)
-		gui.set_text(self.item4Price, short_number(message.price))
+		gui.set_text(self.item4Price, short_numbers(message.price))
 	end
 
 	if message_id == hash("UpdatePCUpgrade") then
@@ -219,8 +219,8 @@ function hoverButtonText(self, pos)
 		if not gui.is_enabled(self.hoverMarket) then
 			gui.set_enabled(self.hoverMarket, true)
 			gui.set_text(gui.get_node("HMTitle"), "Envy X650")
-			local text1 = "Each Envy X650 produces " .. short_number(self.item1Production) .. "/s"
-			local text2 = "You have " .. gui.get_text(self.item1Count) .. " Envy X650 for a total of " .. short_number(self.item1Production * gui.get_text(self.item1Count)) .. "/s"
+			local text1 = "Each Envy X650 produces " .. short_numbers(self.item1Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item1Count) .. " Envy X650 for a total of " .. short_numbers(self.item1Production * gui.get_text(self.item1Count)) .. "/s"
 			local text = text1 .. "\n" .. text2
 			gui.set_text(gui.get_node("HMInfo"), text )
 		end
@@ -229,8 +229,8 @@ function hoverButtonText(self, pos)
 		if not gui.is_enabled(self.hoverMarket) then
 			gui.set_enabled(self.hoverMarket, true)
 			gui.set_text(gui.get_node("HMTitle"), "3DFX Vodoo7")
-			local text1 = "Each Vodoo7 produces " .. short_number(self.item2Production) .. "/s"
-			local text2 = "You have " .. gui.get_text(self.item2Count) .. " Vodoo7 for a total of " .. short_number(self.item2Production * gui.get_text(self.item2Count)) .. "/s"
+			local text1 = "Each Vodoo7 produces " .. short_numbers(self.item2Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item2Count) .. " Vodoo7 for a total of " .. short_numbers(self.item2Production * gui.get_text(self.item2Count)) .. "/s"
 			local text = text1 .. "\n" .. text2
 			gui.set_text(gui.get_node("HMInfo"), text )
 		end
@@ -240,8 +240,8 @@ function hoverButtonText(self, pos)
 		if not gui.is_enabled(self.hoverMarket) then
 			gui.set_enabled(self.hoverMarket, true)
 			gui.set_text(gui.get_node("HMTitle"), "AMF 280XT")
-			local text1 = "Each AMF 280XT produces " .. short_number(self.item3Production) .. "/s"
-			local text2 = "You have " .. gui.get_text(self.item3Count) .. " AMF 280XT for a total of " .. short_number(self.item3Production * gui.get_text(self.item3Count)) .. "/s"
+			local text1 = "Each AMF 280XT produces " .. short_numbers(self.item3Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item3Count) .. " AMF 280XT for a total of " .. short_numbers(self.item3Production * gui.get_text(self.item3Count)) .. "/s"
 			local text = text1 .. "\n" .. text2
 			gui.set_text(gui.get_node("HMInfo"), text )
 		end
@@ -250,8 +250,8 @@ function hoverButtonText(self, pos)
 		if not gui.is_enabled(self.hoverMarket) then
 			gui.set_enabled(self.hoverMarket, true)
 			gui.set_text(gui.get_node("HMTitle"), "Item4")
-			local text1 = "Each Item4 produces " .. short_number(self.item4Production) .. "/s"
-			local text2 = "You have " .. gui.get_text(self.item4Count) .. " Item4 for a total of " .. short_number(self.item4Production * gui.get_text(self.item4Count)) .. "/s"
+			local text1 = "Each Item4 produces " .. short_numbers(self.item4Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item4Count) .. " Item4 for a total of " .. short_numbers(self.item4Production * gui.get_text(self.item4Count)) .. "/s"
 			local text = text1 .. "\n" .. text2
 			gui.set_text(gui.get_node("HMInfo"), text )
 		end
