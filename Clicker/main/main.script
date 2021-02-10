@@ -18,6 +18,11 @@ go.property("costScaler", 0.18)
 go.property("clickUpgradeInitialCost", 1000)
 go.property("clickUpgradeCostScaler", 15)
 
+go.property("item1InitialOCCost", 20)
+go.property("item2InitialOCCost", 30)
+go.property("item3InitialOCCost", 40)
+go.property("item4InitialOCCost", 50)
+
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -33,6 +38,13 @@ function init(self)
 	self.item4CurrentCost = self.item4InitialCost
 	self.clickUpgradeCurrentCost = self.clickUpgradeInitialCost
 
+	
+
+	self.item1CurrentOCCost = self.item1InitialOCCost
+	self.item2CurrentOCCost = self.item2InitialOCCost
+	self.item3CurrentOCCost = self.item3InitialOCCost
+	self.item4CurrentOCCost = self.item4InitialOCCost
+
 	self.PClevel = 0
 
 --SetUp Marketplace
@@ -40,6 +52,7 @@ function init(self)
 	msg.post("/UI#Marketplace", "Updateitem2", {count = self.item2Count, price = self.item2CurrentCost})
 	msg.post("/UI#Marketplace", "Updateitem3", {count = self.item3Count, price = self.item3CurrentCost})
 	msg.post("/UI#Marketplace", "Updateitem4", {count = self.item4Count, price = self.item4CurrentCost})
+	msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
 
 --SetUp Info
 	msg.post(".", "UpdateBitcoinSpeed")
@@ -53,7 +66,6 @@ function update(self, dt)
 	--fixedUpdate --update a cada segon
 	if self.timer > 1 then
 		self.timer = self.timer - 1
-		msg.post("/UI#Marketplace", "UpdateInfo", {item1Production = self.item1Production, item2Production = self.item2Production, item3Production = self.item3Production, item4Production = self.item4Production})
 			
 
 	end
@@ -73,6 +85,8 @@ function update(self, dt)
 	local upgradeProgress = 1 / (self.clickUpgradeCurrentCost / bitcoinCount)
 	msg.post("/UI#Marketplace","UpdateUpgrade", {progress = upgradeProgress})
 	msg.post("/UI#Marketplace", "UpdateAvailability", {item1 = item1Available, item2 = item2Available, item3 = item3Available, item4 = item4Available})
+
+	msg.post("/UI#Marketplace", "UpdateInfo", {item1Production = self.item1Production, item2Production = self.item2Production, item3Production = self.item3Production, item4Production = self.item4Production})
 
 
 end
