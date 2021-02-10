@@ -32,7 +32,7 @@ function init(self)
 
 
 
-	self.timer = 0
+	
 	self.currentProduction = 0
 	self.item1CurrentCost = self.item1InitialCost
 	self.item2CurrentCost = self.item2InitialCost
@@ -64,20 +64,12 @@ function init(self)
 end
 
 function update(self, dt)	
-	self.timer = self.timer + dt
-	--fixedUpdate --update a cada segon
-	if self.timer > 1 then
-		self.timer = self.timer - 1
-			
-
-	end
---normal update
 
 	--Update coins
 	bitcoinCount = bitcoinCount + self.currentProduction * dt
 	msg.post("/UI#Info", "UpdateBitcoinCount", {coins = bitcoinCount})
 
-	--Update Marketplace "Each Item1 produces " .. short_numbers(production) .. "/s"ce color
+	--Update Marketplace 
 	local item1Available = bitcoinCount / self.item1CurrentCost
 	
 	local item2Available = bitcoinCount / self.item2CurrentCost
@@ -145,6 +137,7 @@ function on_message(self, message_id, message, sender)
 			self.item2CurrentCost = new_price(self.item2CurrentCost, self.costScaler)
 			msg.post("/UI#Marketplace", "Updateitem2", {count = self.item2Count, price = self.item2CurrentCost})
 			msg.post(".", "UpdateBitcoinSpeed")
+			msg.post("/UI#Racks", "AddGPU", {tipo = 2})
 		end
 	end
 
@@ -155,6 +148,7 @@ function on_message(self, message_id, message, sender)
 			self.item3CurrentCost = new_price(self.item3CurrentCost, self.costScaler)
 			msg.post("/UI#Marketplace", "Updateitem3", {count = self.item3Count, price = self.item3CurrentCost})
 			msg.post(".", "UpdateBitcoinSpeed")
+			msg.post("/UI#Racks", "AddGPU", {tipo = 3})
 		end
 
 	end	
@@ -166,6 +160,7 @@ function on_message(self, message_id, message, sender)
 			self.item4CurrentCost = new_price(self.item4CurrentCost, self.costScaler)
 			msg.post("/UI#Marketplace", "Updateitem4", {count = self.item4Count, price = self.item4CurrentCost})
 			msg.post(".", "UpdateBitcoinSpeed")
+			msg.post("/UI#Racks", "AddGPU", {tipo = 4})
 		end
 	end
 

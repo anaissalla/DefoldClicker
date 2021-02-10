@@ -1,27 +1,39 @@
 
 local function SetGPU(self, coords, tipo )		
 	self.slotsType[coords.y][coords.x] = tipo
+	
 	if tipo == 0 then
 		gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_empty")
 	elseif tipo == 1 then 
 		if coords.x == 4 then
-			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_front_animation")
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "green_fan_front_animation")
 		else
-			gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_back_animation")
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "green_fan_back_animation")
 		end
 	elseif tipo == 2 then
-
+		print("tipo2")
+		if coords.x == 4 then
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "purple_fan_front_animation")
+		else
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "purple_fan_back_animation")
+		end
 	elseif tipo == 3 then
-
+		if coords.x == 4 then
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "red_fan_front_animation")
+		else
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "red_fan_back_animation")
+		end
 	elseif tipo == 4 then
-
+		if coords.x == 4 then
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "blue_fan_front_animation")
+		else
+			gui.play_flipbook(self.slotReference[coords.y][coords.x], "blue_fan_back_animation")
+		end
 	else
 		print("ERROR!: Wrong GPU type")
 	end
 	if coords.x == 4 and coords.y == 7 then
 
-		--Disable market
-		msg.post("/UI#Marketplace", "SetEnablePurchase", {enable = false})
 		--call new rack
 		timer.delay(0.2, false, new_rack)
 	end
