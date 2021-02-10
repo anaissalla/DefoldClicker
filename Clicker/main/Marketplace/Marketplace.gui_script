@@ -57,7 +57,9 @@ function init(self)
 	self.color = {red = vmath.vector4(0.9,0,0,1), green = vmath.vector4(0,0.9,0,1)}
 
 	self.currentJar = 0
-	self.jarFrames = 17
+	self.jarFrames = 15
+	self.upgradeAvailable = false
+	self.jarAvailablePlaying = false
 end
 
 function short_number(number) 
@@ -161,8 +163,22 @@ function on_message(self, message_id, message, sender)
 
 	if message_id == hash("UpdatePCUpgrade") then
 		--set flipbook jar
-		local jar = gui.get_node("upgradeButton")
-		calculateJarFrame(self, message.progress, 0)
+		if message.progress > 1 then
+			self.upgradeAvailable = true
+			if(self.jarAvailablePlaying == false) then
+				local jar = gui.get_node("upgradeButton")
+				gui.play_flipbook(jar, "JarAvailable")
+				self.jarAvailablePlaying = true
+			end
+		else
+			self.upgradeAvailable = false
+			self.jarAvailablePlaying = false
+		end
+		
+		if self.upgradeAvailable == false then
+			calculateJarFrame(self, message.progress, 0)
+		end
+		
 	end
 	--update Availability
 	if message_id == hash("UpdateAvailability") then
@@ -303,12 +319,6 @@ function hoverButtonText(self, pos)
 	else
 		gui.set_enabled(self.hoverOC, false)
 	end
-
-
-
-	
-	
-	
 end
 
 function on_input(self, action_id, action)
