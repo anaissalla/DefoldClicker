@@ -82,6 +82,30 @@ function is_over(node, pos)
  	end
 end
 
+function update( self, dt )
+	--Update Upgrade Availability
+	if(bitcoinCount >= self.upgrade1Cost) then
+		gui.play_flipbook(self.item1OC, "Overclock3")
+	else
+		gui.play_flipbook(self.item1OC, "Overclock_unavailable3")
+	end
+	if(bitcoinCount >= self.upgrade2Cost) then
+		gui.play_flipbook(self.item2OC, "Overclock1")
+	else
+		gui.play_flipbook(self.item2OC, "Overclock_unavailable1")
+	end
+	if(bitcoinCount >= self.upgrade3Cost) then
+		gui.play_flipbook(self.item3OC, "Overclock2")
+	else
+		gui.play_flipbook(self.item3OC, "Overclock_unavailable2")
+	end
+	if(bitcoinCount >= self.upgrade4Cost) then
+		gui.play_flipbook(self.item4OC, "Overclock4")
+	else
+		gui.play_flipbook(self.item4OC, "Overclock_unavailable4")
+	end
+end
+
 
 
 
