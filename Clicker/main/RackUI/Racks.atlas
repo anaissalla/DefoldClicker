@@ -10,6 +10,10 @@ images {
   image: "/assets/images/Rack/fan_front.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/images/Rack/empty_fan.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "fan_front_animation"
   images {
@@ -172,17 +176,6 @@ animations {
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 8
-  flip_horizontal: 0
-  flip_vertical: 0
-}
-animations {
-  id: "emp"
-  images {
-    image: "/assets/images/Rack/empty_fan.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 60
   flip_horizontal: 0
   flip_vertical: 0
 }
