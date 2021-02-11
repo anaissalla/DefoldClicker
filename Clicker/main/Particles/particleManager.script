@@ -1,0 +1,62 @@
+function init(self)
+	self.playing1 = false
+	self.playing2 = false
+	self.playing3 = false
+	self.playing4 = false
+	self.playing5 = false
+	self.playing6 = false
+	self.playing7 = false
+end
+
+function stopParticles(self)
+	for i = 1, 7 do
+		particlefx.stop("particleManager#coinRain"..i)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("playCoins") then
+		if message.production < 100 and message.production > 0 and self.playing1 == false then
+			print(1)
+			stopParticles(self)
+			self.playing1 = true
+			particlefx.play("particleManager#coinRain1")
+		elseif message.production >= 100 and message.production < 10^3  and self.playing2 == false then
+			print(2)
+			self.playing2 = true
+			stopParticles(self)
+			particlefx.play("particleManager#coinRain2")
+			self.playing1 = false
+		elseif message.production >= 10^3 and message.production < 10^6  and self.playing3 == false then
+			print(3)
+			stopParticles(self)
+			self.playing3 = true
+			particlefx.play("particleManager#coinRain3")
+			self.playing2 = false
+		elseif message.production >= 10^6 and message.production < 10^9  and self.playing4 == false then
+			print(4)
+			stopParticles(self)
+			self.playing4 = true
+			particlefx.play("particleManager#coinRain4")
+			self.playing3 = false
+		elseif message.production >= 10^9 and message.production < 10^12  and self.playing5 == false then
+			print(5)
+			stopParticles(self)
+			self.playing5 = true
+			particlefx.play("particleManager#coinRain5")
+			self.playing4 = false
+		elseif message.production >= 10^12 and message.production < 10^15  and self.playing6 == false then
+			print(6)
+			stopParticles(self)
+			self.playing6 = true
+			particlefx.play("particleManager#coinRain6")
+			self.playing5 = false
+		elseif message.production >= 10^15 and message.production >10^15  and self.playing7 == false then
+			print(7)
+			stopParticles(self)
+			self.playing7 = true
+			particlefx.play("particleManager#coinRain7")
+			self.playing6 = false
+		end
+	end
+end

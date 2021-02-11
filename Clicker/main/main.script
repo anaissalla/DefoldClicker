@@ -81,6 +81,8 @@ function update(self, dt)
 	msg.post("/UI#Marketplace", "UpdateAvailability", {item1 = item1Available, item2 = item2Available, item3 = item3Available, item4 = item4Available})
 
 	msg.post("/UI#Marketplace", "UpdateInfo", {item1Production = self.item1Production, item2Production = self.item2Production, item3Production = self.item3Production, item4Production = self.item4Production})
+
+	msg.post("/particleManager#particleManager", "playCoins", {production = self.currentProduction})
 end
 
 local function new_price(current_price, scaler)
