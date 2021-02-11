@@ -42,12 +42,17 @@ function init(self)
 	self.isOverItem3Buy = false
 	self.isOverItem4Buy = false
 
+	self.isOverUpgrade = false
+	self.PClevel = 0
+
 	self.hoverMarket = gui.get_node("HoverMarket")
 	self.hoverOC = gui.get_node("HoverOC")
+	self.hoverUpgrade = gui.get_node("HoverUpgrade")
 
 
 	gui.set_enabled(self.hoverOC, false)
 	gui.set_enabled(self.hoverMarket, false)
+	gui.set_enabled(self.hoverUpgrade, false)
 
 	self.item1Production = 0
 	self.item2Production = 0
@@ -136,6 +141,7 @@ function on_message(self, message_id, message, sender)
 		self.upgrade2Cost = message.item2
 		self.upgrade3Cost = message.item3
 		self.upgrade4Cost = message.item4
+		
 
 	end
 	--Upgate hover market info
@@ -166,6 +172,8 @@ function on_message(self, message_id, message, sender)
 	end
 
 	if message_id == hash("UpdatePCUpgrade") then
+
+		self.upgradePCCost = message.click
 		--set flipbook jar
 		if message.progress >= 1 then
 			self.upgradeAvailable = true
@@ -280,7 +288,7 @@ function hoverButtonText(self, pos)
 			else
 				gui.set_color(textNode, self.color.red)
 			end
-			gui.set_text(textNode, self.upgrade1Cost .. " $")
+			gui.set_text(textNode, short_numbers(self.upgrade1Cost))
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 
@@ -295,7 +303,7 @@ function hoverButtonText(self, pos)
 			else
 				gui.set_color(textNode, self.color.red)
 			end
-			gui.set_text(textNode, self.upgrade2Cost .. " $")
+			gui.set_text(textNode, short_numbers(self.upgrade2Cost))
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 
@@ -310,7 +318,7 @@ function hoverButtonText(self, pos)
 			else
 				gui.set_color(textNode, self.color.red)
 			end
-			gui.set_text(textNode, self.upgrade3Cost .. " $")
+			gui.set_text(textNode, short_numbers(self.upgrade3Cost))
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
 
@@ -325,11 +333,30 @@ function hoverButtonText(self, pos)
 			else
 				gui.set_color(textNode, self.color.red)
 			end
-			gui.set_text(textNode, self.upgrade4Cost .. " $")
+			gui.set_text(textNode, short_numbers(self.upgrade4Cost))
 		end 
 		gui.set_position(self.hoverOC, vmath.vector3(pos.x, pos.y, 0))
+		
 	else
 		gui.set_enabled(self.hoverOC, false)
+	end
+
+	if self.isOverUpgrade and self.PClevel < 4 then
+		if not gui.is_enabled(self.hoverUpgrade) then
+			gui.set_enabled(self.hoverUpgrade, true)
+			gui.set_text(gui.get_node("HOCTitle1"), "Upgrade PC")
+			local textNode = gui.get_node("HOCInfo1")
+
+			if bitcoinCount >= self.upgradePCCost then
+				gui.set_color(textNode, self.color.green)
+			else
+				gui.set_color(textNode, self.color.red)
+			end
+			gui.set_text(textNode, short_numbers(self.upgradePCCost))
+		end 
+		gui.set_position(self.hoverUpgrade, vmath.vector3(pos.x, pos.y, 0))
+	else
+		gui.set_enabled(self.hoverUpgrade, false)
 	end
 end
 
@@ -390,7 +417,8 @@ function on_input(self, action_id, action)
 		self.isOverItem2OC = is_over(self.item2OC, action)
 		self.isOverItem3OC = is_over(self.item3OC, action)
 		self.isOverItem4OC = is_over(self.item4OC, action)
-
+		self.isOverUpgrade = is_over(self.upgradeButton, action)
+		
 		hoverButtonText(self, action)
 
 	end
