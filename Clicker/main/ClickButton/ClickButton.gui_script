@@ -109,6 +109,11 @@ function animate_computer(self)
 	end
 end
 
+
+function on_particle_animation_end(self, node)
+	gui.delete_node(node)
+end
+
 function on_input(self, action_id, action)
 	if action_id == hash("LEFT_CLICK") and action.released then
 		--local clickButtonSprite = gui.get_node("clickButton")
@@ -121,7 +126,7 @@ function on_input(self, action_id, action)
 			gui.set_text(particlesNumber, "+" .. self.coinsPerClick .. " $")
 			gui.set_position(particlesNumber, vmath.vector3(action.x, action.y, 0.8))
 			gui.animate(particlesNumber, "color.w", 0, gui.EASING_INEXPO, 0.6)
-			gui.animate(particlesNumber, "position", vmath.vector3(action.x, action.y + 200, 0.8), gui.EASING_INSINE, 0.8)
+			gui.animate(particlesNumber, "position", vmath.vector3(action.x, action.y + 200, 0.8), gui.EASING_INSINE, 0.8, 0, on_particle_animation_end)
 
 			
 			--visual feeedback
