@@ -57,7 +57,6 @@ function on_message(self, message_id, message, sender)
 			gui.set_texture(self.clickButtonSprite, "Computer3")
 			gui.play_flipbook(self.clickButtonSprite, "Computer3")
 			gui.set_enabled(Coffee, true)
-			gui.set_render_order(15)
 			gui.play_flipbook(Coffee, "Coffee_Ani")
 		elseif (self.update == 2) then
 			gui.set_texture(self.clickButtonSprite, "Computer4")
