@@ -24,6 +24,7 @@ go.property("item3InitialOCCost", 40)
 go.property("item4InitialOCCost", 50)
 
 go.property("OCScaler", 3)
+go.property("OCBoost", 2)
 
 
 function init(self)
@@ -187,7 +188,7 @@ function on_message(self, message_id, message, sender)
 			msg.post(".", "addCoin", {coins = -self.item1CurrentCost})
 
 			--Upgrade production
-			self.item1Production = new_price(self.item1Production , self.OCScaler)
+			self.item1Production = new_price(self.item1Production , self.OCBoost)
 
 			--Update production speed
 			msg.post(".", "UpdateBitcoinSpeed")
@@ -205,7 +206,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("OCitem2") then
 		if bitcoinCount >= self.item2CurrentOCCost then
 			msg.post(".", "addCoin", {coins = -self.item2CurrentCost})
-			self.item2Production = new_price(self.item2Production , self.OCScaler)
+			self.item2Production = new_price(self.item2Production , self.OCBoost)
 			msg.post(".", "UpdateBitcoinSpeed")
 			self.item2CurrentOCCost = new_price(self.item2CurrentOCCost, self.clickUpgradeCostScaler)
 			msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
@@ -215,7 +216,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("OCitem3") then
 		if bitcoinCount >= self.item3CurrentOCCost then
 			msg.post(".", "addCoin", {coins = -self.item3CurrentCost})
-			self.item3Production = new_price(self.item3Production , self.OCScaler)
+			self.item3Production = new_price(self.item3Production , self.OCBoost)
 			msg.post(".", "UpdateBitcoinSpeed")
 			self.item3CurrentOCCost = new_price(self.item3CurrentOCCost, self.clickUpgradeCostScaler)
 			msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
@@ -225,7 +226,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("OCitem4") then
 		if bitcoinCount >= self.item4CurrentOCCost then
 			msg.post(".", "addCoin", {coins = -self.item4CurrentCost})
-			self.item4Production = new_price(self.item4Production , self.OCScaler)
+			self.item4Production = new_price(self.item4Production , self.OCBoost)
 			msg.post(".", "UpdateBitcoinSpeed")
 			self.item4CurrentOCCost = new_price(self.item4CurrentOCCost, self.clickUpgradeCostScaler)
 			msg.post("/UI#Marketplace",  "UpdateUpgrade", {item1 = self.item1CurrentOCCost, item2 = self.item2CurrentOCCost, item3 = self.item3CurrentOCCost, item4 = self.item4CurrentOCCost })
