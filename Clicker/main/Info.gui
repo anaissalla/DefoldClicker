@@ -7,10 +7,6 @@ fonts {
   name: "bpdots25"
   font: "/Fonts/bpdots25.font"
 }
-fonts {
-  name: "bpdots35"
-  font: "/Fonts/bpdots35.font"
-}
 background_color {
   x: 0.0
   y: 0.0
@@ -50,13 +46,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-<<<<<<< Updated upstream
   text: "123.456B $"
   font: "bpdotTitle"
-=======
-  text: "BitcoinCount"
-  font: "bpdots35"
->>>>>>> Stashed changes
   id: "bitcoinCount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -117,13 +108,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-<<<<<<< Updated upstream
   text: "+ 123.456B $/s"
   font: "bpdots25"
-=======
-  text: "Bitcoin/s"
-  font: "bpdots35"
->>>>>>> Stashed changes
   id: "bitcoinSpeed"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
