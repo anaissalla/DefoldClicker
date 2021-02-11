@@ -21,7 +21,7 @@ function short_number(number)
 		shorted_number = string.format("%3.3f", number) .. " B$"
 	elseif number < 10^15 then
 		number = number / 10^12
-		shorted_number = string.format("%3.3f", number) .. " T$"
+		shorted_number = string.format("%.3f", number) .. " T$"
 	end
 	return shorted_number
 end
