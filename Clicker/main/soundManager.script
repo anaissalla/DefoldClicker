@@ -1,7 +1,11 @@
+
+function init(self)
+	sound.play("soundManager#Song")
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("playKey") then
 		local n = math.random(1,9)
-		print(n)
 		sound.play("soundManager#click"..n)
 	end
 end
