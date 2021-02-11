@@ -94,6 +94,7 @@ end
 function on_message(self, message_id, message, sender)
 	--add coins
 	if message_id == hash("addCoin") then
+		print(message.coins)
 		bitcoinCount = bitcoinCount + message.coins
 		msg.post("/UI#Info", "UpdateBitcoinCount", {coins = math.floor(bitcoinCount)})
 	end
@@ -187,7 +188,8 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("OCitem1") then
 		if bitcoinCount >= self.item1CurrentOCCost then
 			--remove coins
-			msg.post(".", "addCoin", {coins = -self.item1CurrentCost})
+			--print (self.item1CurrentOCCost)
+			msg.post(".", "addCoin", {coins = -self.item1CurrentOCCost})
 
 			--Upgrade production
 			self.item1Production = new_price(self.item1Production , self.OCBoost)
@@ -207,7 +209,7 @@ function on_message(self, message_id, message, sender)
 	end
 	if message_id == hash("OCitem2") then
 		if bitcoinCount >= self.item2CurrentOCCost then
-			msg.post(".", "addCoin", {coins = -self.item2CurrentCost})
+			msg.post(".", "addCoin", {coins = -self.item2CurrentOCCost})
 			self.item2Production = new_price(self.item2Production , self.OCBoost)
 			msg.post(".", "UpdateBitcoinSpeed")
 			self.item2CurrentOCCost = new_price(self.item2CurrentOCCost, self.clickUpgradeCostScaler)
@@ -217,7 +219,7 @@ function on_message(self, message_id, message, sender)
 	end
 	if message_id == hash("OCitem3") then
 		if bitcoinCount >= self.item3CurrentOCCost then
-			msg.post(".", "addCoin", {coins = -self.item3CurrentCost})
+			msg.post(".", "addCoin", {coins = -self.item3CurrentOCCost})
 			self.item3Production = new_price(self.item3Production , self.OCBoost)
 			msg.post(".", "UpdateBitcoinSpeed")
 			self.item3CurrentOCCost = new_price(self.item3CurrentOCCost, self.clickUpgradeCostScaler)
@@ -227,7 +229,7 @@ function on_message(self, message_id, message, sender)
 	end
 	if message_id == hash("OCitem4") then
 		if bitcoinCount >= self.item4CurrentOCCost then
-			msg.post(".", "addCoin", {coins = -self.item4CurrentCost})
+			msg.post(".", "addCoin", {coins = -self.item4CurrentOCCost})
 			self.item4Production = new_price(self.item4Production , self.OCBoost)
 			msg.post(".", "UpdateBitcoinSpeed")
 			self.item4CurrentOCCost = new_price(self.item4CurrentOCCost, self.clickUpgradeCostScaler)

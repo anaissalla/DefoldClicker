@@ -11,7 +11,7 @@ local function SetGPU(self, coords, tipo )
 			gui.play_flipbook(self.slotReference[coords.y][coords.x], "green_fan_back_animation")
 		end
 	elseif tipo == 2 then
-		print("tipo2")
+		--print("tipo2")
 		if coords.x == 4 then
 			gui.play_flipbook(self.slotReference[coords.y][coords.x], "purple_fan_front_animation")
 		else

@@ -282,7 +282,7 @@ function hoverButtonText(self, pos)
 			gui.set_enabled(self.hoverOC, true)
 			gui.set_text(gui.get_node("HOCTitle"), "Overclock")
 			local textNode = gui.get_node("HOCInfo")
-			print(self.upgrade1Cost .. " " .. bitcoinCount)
+			--print(self.upgrade1Cost .. " " .. bitcoinCount)
 			if bitcoinCount >= self.upgrade1Cost then
 				gui.set_color(textNode, self.color.green)
 			else
@@ -340,7 +340,7 @@ function hoverButtonText(self, pos)
 	else
 		gui.set_enabled(self.hoverOC, false)
 	end
-	print(self.PClevel)
+	--print(self.PClevel)
 	if self.isOverUpgrade and self.PClevel < 4 then
 		if not gui.is_enabled(self.hoverUpgrade) then
 			gui.set_enabled(self.hoverUpgrade, true)

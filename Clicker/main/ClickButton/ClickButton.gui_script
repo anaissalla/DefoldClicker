@@ -33,10 +33,7 @@ local function GetNewCoinsPerClick(self)
 end
 
 function on_message(self, message_id, message, sender)
-	--old
-	--if message_id == hash("enable")then
-	--	msg.post(".", "acquire_input_focus")
-	--end
+	
 	if message_id == hash("upgradeClickSprite") then
 		--print("upgradeClickSprite")
 		local sprite = gui.get_node("clickButton")
@@ -93,8 +90,6 @@ end
 
 function animate_computer(self)
 	--print(self.currentAnimation)
-	
-
 	
 	if(self.update == 0) then
 		playNextFrame(self, "Ani", self.Computer1Frames)
