@@ -9,19 +9,19 @@ end
 function short_number(number) 
 	local shorted_number
 	--print(number)
-	if number < 10^3  then
-		shorted_number = string.format("%.1f", number) .. "$"
+	if number < 10^2  then
+		shorted_number = string.format("%.1f", number) .. " $"
 	elseif number < 10^6 then 
-		shorted_number = string.format("%.f", number) .. "$"
+		shorted_number = string.format("%.f", number) .. " $"
 	elseif number < 10^9 then
 		number = number / 10^6
-		shorted_number = string.format("%3.3f", number) .. " M$"
+		shorted_number = string.format("%3.3f", number) .. "M $" --million
 	elseif number < 10^12 then
 		number = number / 10^9
-		shorted_number = string.format("%3.3f", number) .. " B$"
+		shorted_number = string.format("%3.3f", number) .. "B $" --billion
 	elseif number < 10^15 then
 		number = number / 10^12
-		shorted_number = string.format("%.3f", number) .. " T$"
+		shorted_number = string.format("%.3f", number) .. "T $" --trillion
 	end
 	return shorted_number
 end

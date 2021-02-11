@@ -1,11 +1,11 @@
 script: "/main/info.gui_script"
 fonts {
-  name: "Montserrat"
-  font: "/Fonts/Montserrat.font"
+  name: "bpdotTitle"
+  font: "/Fonts/bpdotTitle.font"
 }
 fonts {
-  name: "NK57 Info"
-  font: "/Fonts/NK57 Info.font"
+  name: "bpdots25"
+  font: "/Fonts/bpdots25.font"
 }
 background_color {
   x: 0.0
@@ -15,8 +15,8 @@ background_color {
 }
 nodes {
   position {
-    x: 268.0
-    y: 969.0
+    x: 179.0
+    y: 970.0
     z: 0.0
     w: 1.0
   }
@@ -46,12 +46,12 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "BitcoinCount"
-  font: "NK57 Info"
+  text: "123.456B $"
+  font: "bpdotTitle"
   id: "bitcoinCount"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_W
   outline {
     x: 1.0
     y: 1.0
@@ -77,8 +77,8 @@ nodes {
 }
 nodes {
   position {
-    x: 519.0
-    y: 969.0
+    x: 488.0
+    y: 970.0
     z: 0.0
     w: 1.0
   }
@@ -108,12 +108,12 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Bitcoin/s"
-  font: "NK57 Info"
+  text: "+ 123.456B $/s"
+  font: "bpdots25"
   id: "bitcoinSpeed"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_W
   outline {
     x: 1.0
     y: 1.0
