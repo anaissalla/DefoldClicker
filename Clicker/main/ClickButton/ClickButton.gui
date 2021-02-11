@@ -1,7 +1,7 @@
 script: "/main/ClickButton/ClickButton.gui_script"
 fonts {
-  name: "bpdots35"
-  font: "/Fonts/bpdots35.font"
+  name: "bpdots25"
+  font: "/Fonts/bpdots25.font"
 }
 textures {
   name: "ClickSprite"
@@ -255,8 +255,8 @@ nodes {
 }
 nodes {
   position {
-    x: -454.0
-    y: 249.0
+    x: -294.0
+    y: 210.0
     z: 0.0
     w: 1.0
   }
@@ -287,7 +287,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "main/Coin"
-  id: "Particle"
+  id: "ParticleCoin"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -309,8 +309,8 @@ nodes {
 }
 nodes {
   position {
-    x: 24.0
-    y: 3.0
+    x: -328.0
+    y: 362.0
     z: 0.0
     w: 1.0
   }
@@ -341,11 +341,11 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "+12548 $"
-  font: "bpdots35"
-  id: "text"
+  font: "bpdots25"
+  id: "ParticleText"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_W
+  pivot: PIVOT_CENTER
   outline {
     x: 1.0
     y: 1.0
@@ -360,7 +360,6 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "Particle"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
