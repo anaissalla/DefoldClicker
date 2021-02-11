@@ -172,7 +172,8 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("upgradeClick") then
 		if (self.PClevel < 4) and (bitcoinCount >= self.clickUpgradeCurrentCost) then
 			self.PClevel = self.PClevel + 1
-			msg.post(".", "addCoins", {coins = -self.clickUpgradeCurrentCost})
+			print(self.clickUpgradeCurrentCost)
+			msg.post(".", "addCoin", {coins = -self.clickUpgradeCurrentCost})
 			
 			self.clickUpgradeCurrentCost = new_price(self.clickUpgradeCurrentCost, self.clickUpgradeCostScaler)
 			msg.post("/UI#ClickButton", "upgradeClickSprite")
@@ -188,7 +189,6 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("OCitem1") then
 		if bitcoinCount >= self.item1CurrentOCCost then
 			--remove coins
-			--print (self.item1CurrentOCCost)
 			msg.post(".", "addCoin", {coins = -self.item1CurrentOCCost})
 
 			--Upgrade production
