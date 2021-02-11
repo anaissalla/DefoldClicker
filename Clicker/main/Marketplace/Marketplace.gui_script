@@ -266,9 +266,9 @@ function hoverButtonText(self, pos)
 	elseif self.isOverItem4Buy then
 		if not gui.is_enabled(self.hoverMarket) then
 			gui.set_enabled(self.hoverMarket, true)
-			gui.set_text(gui.get_node("HMTitle"), "Item4")
-			local text1 = "Each Item4 produces " .. short_numbers(self.item4Production) .. "/s"
-			local text2 = "You have " .. gui.get_text(self.item4Count) .. " Item4 for a total of " .. short_numbers(self.item4Production * gui.get_text(self.item4Count)) .. "/s"
+			gui.set_text(gui.get_node("HMTitle"), "D-Wave Orion")
+			local text1 = "Each Orion produces " .. short_numbers(self.item4Production) .. "/s"
+			local text2 = "You have " .. gui.get_text(self.item4Count) .. " Orion for a total of " .. short_numbers(self.item4Production * gui.get_text(self.item4Count)) .. "/s"
 			local text = text1 .. "\n" .. text2
 			gui.set_text(gui.get_node("HMInfo"), text )
 		end

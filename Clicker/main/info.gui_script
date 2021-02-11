@@ -33,7 +33,7 @@ function on_message(self, message_id, message, sender)
 
 	if message_id == hash("UpdateBitcoinSpeed") then
 		--print(message.coins)
-		gui.set_text(gui.get_node("bitcoinSpeed"), "+ " .. short_number(message.coins) .. " / s")
+		gui.set_text(gui.get_node("bitcoinSpeed"), "+ " .. short_number(message.coins) .. "/s")
 	end
 end
 

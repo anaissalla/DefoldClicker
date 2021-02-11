@@ -1289,7 +1289,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Item 4"
+  text: "D-Wave Orion"
   font: "bpdots25"
   id: "item4Name"
   xanchor: XANCHOR_NONE
