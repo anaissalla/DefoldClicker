@@ -19,7 +19,7 @@ function init(self)
 	gui.set_enabled(Leds, false)
 	gui.set_enabled(Coffee, false)
 
-	gui.set_render_order(14)
+	gui.set_render_order(13)
 
 	self.particleCoin = gui.get_node("ParticleCoin")
 	self.particleText = gui.get_node("ParticleText")
