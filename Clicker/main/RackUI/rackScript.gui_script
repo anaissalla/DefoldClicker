@@ -3,7 +3,7 @@ local function SetGPU(self, coords, tipo )
 	self.slotsType[coords.y][coords.x] = tipo
 	
 	if tipo == 0 then
-		gui.play_flipbook(self.slotReference[coords.y][coords.x], "fan_empty")
+		gui.play_flipbook(self.slotReference[coords.y][coords.x], "empty_fan")
 	elseif tipo == 1 then 
 		if coords.x == 4 then
 			gui.play_flipbook(self.slotReference[coords.y][coords.x], "green_fan_front_animation")
@@ -43,7 +43,7 @@ local function RemoveAllGPU(self)
 	for y=1,7 do
 		for x=1,4 do
 			self.slotsType[y][x] = 0
-			gui.play_flipbook(self.slotReference[y][x], "fan_empty")
+			gui.play_flipbook(self.slotReference[y][x], "empty_fan")
 		end
 	end
 end
