@@ -1,5 +1,7 @@
 [project]
-title = Clicker
+title = BitcoinMiner
+version = 1.1
+publisher = Anaïs Salla & Marçal Tineo
 
 [bootstrap]
 main_collection = /main/main.collectionc
